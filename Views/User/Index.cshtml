@@ -1,0 +1,818 @@
+﻿
+@{
+    ViewBag.Title = "Trang chủ";
+    ViewBag.Title1 = "Trang chủ";
+    ViewBag.Title2 = "";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+@section Slide{
+
+    <div id="slider">
+        <div id="headerSlider" class="carousel slide " data-ride="carousel">
+            <ol class="carousel-indicators bg-dark">
+                <li data-target="#headerSlider" data-slide-to="0" class="active"></li>
+                <li data-target="#headerSlider" data-slide-to="1"></li>
+                <li data-target="#headerSlider" data-slide-to="2"></li>
+                <li data-target="#headerSlider" data-slide-to="3"></li>
+                <li data-target="#headerSlider" data-slide-to="4"></li>
+            </ol>
+            <div class="carousel-inner ">
+                <div class="carousel-item active bg-light">
+                    <img src="~/assets/anh/banner2-1.jpg" class="d-block rounded mx-auto " />
+                    <div class="carousel-caption">
+                        <!-- <h5>Slogan</h5> -->
+                    </div>
+                </div>
+                <div class="carousel-item bg-light">
+                    <img src="~/assets/anh/banner4-1.jpg" class="d-block rounded mx-auto " />
+                    <div class="carousel-caption">
+                        <!-- <h5>Slogan</h5> -->
+                    </div>
+                </div>
+                <div class="carousel-item bg-light">
+                    <img src="~/assets/anh/banner1-1.jpg" class="d-block rounded mx-auto " />
+                    <div class="carousel-caption">
+                        <!-- <h5>Slogan</h5> -->
+                    </div>
+                </div>
+                <div class="carousel-item bg-light">
+                    <img src=" ~/assets/anh/banner5-1.jpg" class="d-block rounded mx-auto" />
+                    <div class="carousel-caption">
+                        <!-- <h5>Slogan</h5> -->
+                    </div>
+                </div>
+                <div class="carousel-item bg-light">
+                    <img src=" ~/assets/anh/banner6-1.jpg" class="d-block rounded mx-auto" />
+                    <div class="carousel-caption">
+                        <!-- <h5>Slogan</h5> -->
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev"
+               href="#headerSlider"
+               role="button"
+               data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next"
+               href="#headerSlider"
+               role="button"
+               data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+    <!--Slide show-->
+}
+<!--Booking start-->
+<section id="vmb-homepage-booking-place">
+    <div class="container py-5">
+        <div class="vmb-booking-ticket">
+            <div id="vmbSearch" class="col-md-12 vmb-search">
+                <div class="ftl-base-header ftl-search-header">
+                    <span>TÌM KIẾM CHUYẾN BAY</span>
+                </div>
+                <ul class="tab-services clearfix">
+                    <li class="tab-flight active">
+                        <span>Vé máy bay</span>
+                    </li>
+                </ul>
+                <ul class="ftlSearch-option">
+                    <li name="ftlSearch-trips" value="1">
+                        <span class="checkmark ftl-active"></span>
+                        <span>Một chiều</span>
+                    </li>
+                    <li name="ftlSearch-trips" value="2">
+                        <span class="checkmark "></span>
+                        <span> Khứ hồi</span>
+                    </li>
+                    <li name="ftlSearch-trips" value="3">
+                        <span class="checkmark"></span>
+                        <span> Nhiều chặng</span>
+                    </li>
+                    <li>
+                        <div name="ftlSearch-month">
+                            <span class="checkmark ftl-mobile"></span>
+                            <span>Tìm vé rẻ cả tháng &nbsp;</span>
+                            <span class="checkmark ftl-desktop"></span>
+                        </div>
+                    </li>
+                </ul>
+                <div class="ftlSearch-main">
+                    <div class="ftlSearch-flight">
+                        <ul class="ftlSearch-list">
+                            <li>
+                                <p>Điểm đi</p>
+                                <div class="ftlSearch-group">
+                                    <input type="text"
+                                           class="ftl-search-req ftl-location"
+                                           location="departure"
+                                           placeholder="Nhập thành phố / Mã sân bay"
+                                           value=""
+                                           readonly="" />
+                                    <span class="ftl-input-icon">
+                                        <i class="fa fa-angle-down"></i>
+                                    </span>
+                                </div>
+                            </li>
+                            <li class="button convert"></li>
+                            <li>
+                                <p>Điểm đến</p>
+                                <div class="ftlSearch-group">
+                                    <input type="text"
+                                           class="ftl-search-req ftl-location"
+                                           location="arrived"
+                                           placeholder="Nhập thành phố / Mã sân bay"
+                                           value=""
+                                           readonly="" />
+                                    <span class="ftl-input-icon">
+                                        <i class="fa fa-angle-down"></i>
+                                    </span>
+                                </div>
+                            </li>
+                            <li>
+                                <p>Ngày đi</p>
+                                <div class="ftlSearch-group">
+                                    <input type="datetime"
+                                           id="ftl-date-departure"
+                                           class="ftl-search-req"
+                                           placeholder="Chọn ngày đi"
+                                           value=""
+                                           readonly="" />
+
+                                    <span class="ftl-input-icon">
+                                        <i class="fa fa-angle-down"></i>
+                                    </span>
+                                </div>
+                            </li>
+                            <li class="button"></li>
+                            <li class="ftl-unactive">
+                                <p>Ngày về</p>
+                                <div class="ftlSearch-group">
+                                    <input type="datetime"
+                                           id="ftl-date-return"
+                                           class="ftl-search-req"
+                                           placeholder="Chọn ngày về"
+                                           value=""
+                                           readonly=""
+                                           disabled="" />
+                                    <span class="ftl-input-icon">
+                                        <i class="fa fa-angle-down"></i>
+                                    </span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="ftlSearch-wraper">
+                        <div class="ftlSearch-posion">
+                            <div class="ftlSearch-passager ftl-tooltip">
+                                <p class="ftlSearch-adt">Người lớn</p>
+                                <ul class="ftlSearch-number" type="adt">
+                                    <li>
+                                        <button type="button" class="ftlSearch-minu">
+                                            <i class="fa fa-minus-square-o ftl-unactive"></i>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <span>1</span>
+                                    </li>
+                                    <li>
+                                        <button type="button" class="ftlSearch-plus">
+                                            <i class="fa fa-plus-square-o ftl-active"></i>
+                                        </button>
+                                    </li>
+                                </ul>
+                                <div class="ftl-tooltip-box">
+                                    Hành khách 12 tuổi trở lên
+                                </div>
+                            </div>
+                            <div class="ftlSearch-passager ftl-tooltip">
+                                <p class="ftlSearch-chd">Trẻ em</p>
+                                <ul class="ftlSearch-number" type="chd">
+                                    <li>
+                                        <button type="button" class="ftlSearch-minu">
+                                            <i class="fa fa-minus-square-o ftl-unactive"> </i>
+                                        </button>
+                                    </li>
+                                    <li><span>0</span></li>
+                                    <li>
+                                        <button type="button" class="ftlSearch-plus">
+                                            <i class="fa fa-plus-square-o ftl-active"></i>
+                                        </button>
+                                    </li>
+                                </ul>
+                                <div class="ftl-tooltip-box">
+                                    Hành khách từ 2 đến dưới 12 tuổi
+                                </div>
+                            </div>
+                            <div class="ftlSearch-passager ftl-tooltip">
+                                <p class="ftlSearch-inf">Em bé</p>
+                                <ul class="ftlSearch-number" type="inf">
+                                    <li>
+                                        <button type="button" class="ftlSearch-minu">
+                                            <i class="fa fa-minus-square-o ftl-unactive"></i>
+                                        </button>
+                                    </li>
+                                    <li><span>0</span></li>
+                                    <li>
+                                        <button type="button" class="ftlSearch-plus">
+                                            <i class="fa fa-plus-square-o ftl-active"></i>
+                                        </button>
+                                    </li>
+                                </ul>
+                                <div class="ftl-tooltip-box">Hành khách nhỏ hơn 2 tuổi</div>
+                            </div>
+                        </div>
+                        <div class="ftlSearch-posion">
+                            <a href="~/Home/Danhsachchuyenbay">
+                                <button type="button" class="ftlSearch-button">
+                                    <i class="fa fa-search"></i> TÌM KIẾM CHUYẾN BAY
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="ftl-clear"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--Hot place-->
+<section id="hot-place">
+    <div class="container">
+        <div class="pt-5 my-3">
+            <div class="row favorite">
+                <div class="col-md-12">
+                    <h1 class="m-0 favorite-title">Điểm đến yêu thích</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <ul class="nav" id="myTab" role="tablist">
+            <li class="nav-item p-0 booking-type-tab">
+                <a data-toggle="tab"
+                   role="tab"
+                   href="#ve-may-bay"
+                   class="nav-link p-0 pr-4 hover_yellow active"
+                   title="Vé máy bay">
+                    <span class="border-bottom">Vé máy bay</span>
+                </a>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active"
+                 id="ve-may-bay"
+                 role="tabpanel"
+                 aria-labelledby="2-tab">
+                <div class="py-3 row">
+                    <div class="col-md-4 my-3">
+                        <a class="
+                  favorite-item
+                  text-body
+                  d-flex
+                  align-items-center
+                  justify-content-between
+                "
+                           title="Sài Gòn - Hà Nội - Sài Gòn: 1,768,000đ*">
+                            <div>
+                                <img class="img-fluid favorite-item-thumbnail"
+                                     src=" ~/assets/anh/DESTINATION-01.png"
+                                     alt="Sài Gòn - Hà Nội - Sài Gòn"
+                                     title="Sài Gòn - Hà Nội - Sài Gòn" />
+                            </div>
+                            <div class="ml-2 d-flex flex-column flex-grow-1">
+                                <b class="m-0 vmb-book-place pb-1 m-0 line-style">Sài Gòn - Hà Nội - Sài Gòn</b>
+                                <div class="py-1">
+                                    <p class="vmb-big-word m-0">
+                                        <i class="vmb-small-word pr-2">Từ</i>1,768,000đ*
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4 my-3">
+                        <a class="
+                  favorite-item
+                  text-body
+                  d-flex
+                  align-items-center
+                  justify-content-between
+                "
+                           title="Sài Gòn - Đà Nẵng - Sài Gòn: 1,108,000đ*">
+                            <div>
+                                <img class="img-fluid favorite-item-thumbnail"
+                                     src=" ~/assets/anh/DESTINATION-02.png"
+                                     alt="Sài Gòn - Đà Nẵng - Sài Gòn"
+                                     title="Sài Gòn - Đà Nẵng - Sài Gòn" />
+                            </div>
+                            <div class="ml-2 d-flex flex-column flex-grow-1">
+                                <b class="m-0 vmb-book-place pb-1 m-0 line-style">Sài Gòn - Đà Nẵng - Sài Gòn</b>
+                                <div class="py-1">
+                                    <p class="vmb-big-word m-0">
+                                        <i class="vmb-small-word pr-2">Từ</i>1,108,000đ*
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4 my-3">
+                        <a class="
+                  favorite-item
+                  text-body
+                  d-flex
+                  align-items-center
+                  justify-content-between
+                "
+                           title="Sài Gòn - Phú Quốc - Sài Gòn: 2,884,000đ*">
+                            <div>
+                                <img class="img-fluid favorite-item-thumbnail"
+                                     src=" ~/assets/anh/DESTINATION-03.png"
+                                     alt="Sài Gòn - Phú Quốc - Sài Gòn"
+                                     title="Sài Gòn - Phú Quốc - Sài Gòn" />
+                            </div>
+                            <div class="ml-2 d-flex flex-column flex-grow-1">
+                                <b class="m-0 vmb-book-place pb-1 m-0 line-style">Sài Gòn - Phú Quốc - Sài Gòn</b>
+                                <div class="py-1">
+                                    <p class="vmb-big-word m-0">
+                                        <i class="vmb-small-word pr-2">Từ</i>2,884,000đ*
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-md-4 my-3">
+                        <a class="
+                  favorite-item
+                  text-body
+                  d-flex
+                  align-items-center
+                  justify-content-between
+                "
+                           title="Sài Gòn - Singapore - Sài Gòn: 2,884,000đ*">
+                            <div>
+                                <img class="img-fluid favorite-item-thumbnail"
+                                     src=" ~/assets/anh/DESTINATION-04.png"
+                                     alt="Sài Gòn - Singapore - Sài Gòn"
+                                     title="Sài Gòn - Singapore - Sài Gòn" />
+                            </div>
+                            <div class="ml-2 d-flex flex-column flex-grow-1">
+                                <b class="m-0 vmb-book-place pb-1 m-0 line-style">Sài Gòn - Singapore - Sài Gòn</b>
+                                <div class="py-1">
+                                    <p class="vmb-big-word m-0">
+                                        <i class="vmb-small-word pr-2">Từ</i>2,884,000đ*
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-md-4 my-3">
+                        <a class="
+                  favorite-item
+                  text-body
+                  d-flex
+                  align-items-center
+                  justify-content-between
+                "
+                           title="Sài Gòn - TaiPei - Sài Gòn: 3,173,000đ*">
+                            <div>
+                                <img class="img-fluid favorite-item-thumbnail"
+                                     src=" ~/assets/anh/DESTINATION-05.png"
+                                     alt="Sài Gòn - TaiPei - Sài Gòn"
+                                     title="Sài Gòn - TaiPei - Sài Gòn" />
+                            </div>
+                            <div class="ml-2 d-flex flex-column flex-grow-1">
+                                <b class="m-0 vmb-book-place pb-1 m-0 line-style">Sài Gòn - TaiPei - Sài Gòn</b>
+                                <div class="py-1">
+                                    <p class="vmb-big-word m-0">
+                                        <i class="vmb-small-word pr-2">Từ</i>3,173,000đ*
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-md-4 my-3">
+                        <a class="
+                  favorite-item
+                  text-body
+                  d-flex
+                  align-items-center
+                  justify-content-between
+                "
+                           title="Sài Gòn - Korea - Sài Gòn: 5,094,000đ*">
+                            <div>
+                                <img class="img-fluid favorite-item-thumbnail"
+                                     src=" ~/assets/anh/DESTINATION-06.png"
+                                     alt="Sài Gòn - Korea - Sài Gòn"
+                                     title="Sài Gòn - Korea - Sài Gòn" />
+                            </div>
+                            <div class="ml-2 d-flex flex-column flex-grow-1">
+                                <b class="m-0 vmb-book-place pb-1 m-0 line-style">Sài Gòn - Korea - Sài Gòn</b>
+                                <div class="py-1">
+                                    <p class="vmb-big-word m-0">
+                                        <i class="vmb-small-word pr-2">Từ</i>5,094,000đ*
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-md-4 my-3">
+                        <a class="
+                  favorite-item
+                  text-body
+                  d-flex
+                  align-items-center
+                  justify-content-between
+                "
+                           title="Sài Gòn - Paris - Sài Gòn: 17,744,000đ*">
+                            <div>
+                                <img class="img-fluid favorite-item-thumbnail"
+                                     src=" ~/assets/anh/DESTINATION-07.png"
+                                     alt="Sài Gòn - Paris - Sài Gòn"
+                                     title="Sài Gòn - Paris - Sài Gòn" />
+                            </div>
+                            <div class="ml-2 d-flex flex-column flex-grow-1">
+                                <b class="m-0 vmb-book-place pb-1 m-0 line-style">Sài Gòn - Paris - Sài Gòn</b>
+                                <div class="py-1">
+                                    <p class="vmb-big-word m-0">
+                                        <i class="vmb-small-word pr-2">Từ</i>17,744,000đ*
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-md-4 my-3">
+                        <a class="
+                  favorite-item
+                  text-body
+                  d-flex
+                  align-items-center
+                  justify-content-between
+                "
+                           title="Sài Gòn - Los Angeles - Sài Gòn: 17,980,000đ*">
+                            <div>
+                                <img class="img-fluid favorite-item-thumbnail"
+                                     src=" ~/assets/anh/DESTINATION-08.png"
+                                     alt="Sài Gòn - Los Angeles - Sài Gòn"
+                                     title="Sài Gòn - Los Angeles - Sài Gòn" />
+                            </div>
+                            <div class="ml-2 d-flex flex-column flex-grow-1">
+                                <b class="m-0 vmb-book-place pb-1 m-0 line-style">Sài Gòn - Los Angeles - Sài Gòn</b>
+                                <div class="py-1">
+                                    <p class="vmb-big-word m-0">
+                                        <i class="vmb-small-word pr-2">Từ</i>17,980,000đ*
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4 my-3">
+                        <a class="
+                  favorite-item
+                  text-body
+                  d-flex
+                  align-items-center
+                  justify-content-between
+                "
+                           title="Sài Gòn - MelBourne - Sài Gòn: 12,993,000đ*">
+                            <div>
+                                <img class="img-fluid favorite-item-thumbnail"
+                                     src=" ~/assets/anh/DESTINATION-09.png"
+                                     alt="Sài Gòn - MelBourne - Sài Gòn"
+                                     title="Sài Gòn - MelBourne - Sài Gòn" />
+                            </div>
+                            <div class="ml-2 d-flex flex-column flex-grow-1">
+                                <b class="m-0 vmb-book-place pb-1 m-0 line-style">Sài Gòn - MelBourne - Sài Gòn</b>
+                                <div class="py-1">
+                                    <p class="vmb-big-word m-0">
+                                        <i class="vmb-small-word pr-2">Từ</i>12,993,000đ*
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="
+          d-flex
+          flex-md-row flex-column
+          justify-content-start justify-content-md-between
+          align-items-md-center
+          favorite-more-info
+          text-left
+        ">
+            <div>
+                <a>* Giá đã bao gồm thuế phí</a>
+                <a class="d-none d-md-inline-block ml-5">
+                    <i class="ti-layers pr-1"></i> Điều khoản &amp; điều kiện
+                </a>
+            </div>
+            <div class="my-2 my-md-0">
+                <span class="d-flex justify-content-between align-items-center">
+                    <a class="d-block d-md-none">
+                        <i class="ti-layers pr-1"></i> Điều khoản &amp; điều kiện
+                    </a>
+                    <a class="favorite-more">
+                        Xem thêm <i class="ti-angle-right"></i>
+                    </a>
+                </span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--Why choose us-->
+<section id="why-choose-us">
+    <div class="container">
+        <h1>Tại sao nên chọn chúng tôi?</h1>
+        <div class="row why-choose-us">
+            <div class="col-md-3 text-center">
+                <div class="d-flex justify-content-center">
+                    <img src=" ~/assets/anh/support_24-7.png" alt="Hỗ trợ 24/7" />
+                </div>
+                <h3>Hỗ trợ 24/7</h3>
+                <p>Luôn săn sàng tư vấn và giải đáp thắc mắc của Khách hàng 24/7</p>
+            </div>
+            <div class="col-md-3 text-center">
+                <div class="d-flex justify-content-center">
+                    <img src=" ~/assets/anh/gia-ve-tot.png" alt="Gía vé tốt nhất" />
+                </div>
+                <h3>Giá vé tốt nhất</h3>
+                <p>
+                    Đảm bảo giá vé máy bay tốt nhất cho nhu cầu đặt mua vé máy bay
+                    theo các chặng khác nhau của Khách hàng
+                </p>
+            </div>
+            <div class="col-md-3 text-center">
+                <div class="d-flex justify-content-center">
+                    <img src=" ~/assets/anh/dich-vu-da-nang.png" alt="Dịch vụ đa dạng" />
+                </div>
+                <h3>Dịch vụ đa dạng</h3>
+                <p>
+                    Ngoài dịch vụ vé máy bay chung tôi còn có dịch vụ thuê xe và khách
+                    sạn phục vụ Khách hàng
+                </p>
+            </div>
+            <div class="col-md-3 text-center">
+                <div class="d-flex justify-content-center">
+                    <img src=" ~/assets/anh/giao-ve-tan-noi.png" alt="Giao vé tận nơi" />
+                </div>
+                <h3>Giao vé tận nơi</h3>
+                <p>Giao vé tận nơi nhanh chóng, uy tín, nhận vé mới thanh toán</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="donors">
+    <div class="container py-4">
+        <div class="row">
+            <div class="col-md-12 my-2">
+                <p class="section-title my-3" title="Aviation partner">
+                    Aviation partner
+                </p>
+                <div class="
+              d-flex
+              flex-nowrap flex-md-wrap
+              overflow-auto
+              align-items-center
+              my-3
+            ">
+                    <div class="partner-item mb-md-3 mr-5">
+                        <a title="Bamboo Airways">
+                            <img src=" ~/assets/anh/bamboo.png" alt="Bamboo Airways" />
+                        </a>
+                    </div>
+                    <div class="partner-item mb-md-3 mr-5">
+                        <a title="VietNam Airlines">
+                            <img src=" ~/assets/anh/VietnamAirlines.jpg"
+                                 alt="VietNam Airlines" />
+                        </a>
+                    </div>
+                    <div class="partner-item mb-md-3 mr-5">
+                        <a title="vietjet">
+                            <img src=" ~/assets/anh/vietjet.png" alt="vietjet" />
+                        </a>
+                    </div>
+                    <div class="partner-item mb-md-3 mr-5">
+                        <a title="Cathay">
+                            <img src=" ~/assets/anh/cathay.png" alt="Cathay" />
+                        </a>
+                    </div>
+                    <div class="partner-item mb-md-3 mr-5">
+                        <a title="Korean Airline">
+                            <img src=" ~/assets/anh/korean.png" alt="Korean Airline" />
+                        </a>
+                    </div>
+                    <div class="partner-item mb-md-3 mr-5">
+                        <a title="Delta Airline">
+                            <img src=" ~/assets/anh/delta.png" alt="Delta Airline" />
+                        </a>
+                    </div>
+                    <div class="partner-item mb-md-3 mr-5">
+                        <a title="China Airline">
+                            <img src=" ~/assets/anh/china-airlines.png" alt="China Airline" />
+                        </a>
+                    </div>
+                    <div class="partner-item mb-md-3 mr-5">
+                        <a title="Philippine Airline">
+                            <img src=" ~/assets/anh/philippine-airlines.png"
+                                 alt="Philippine Airline" />
+                        </a>
+                    </div>
+                    <div class="partner-item mb-md-3 mr-5">
+                        <a title="Thai Airline">
+                            <img src=" ~/assets/anh/thai.png" alt="Thai Airline" />
+                        </a>
+                    </div>
+                    <div class="partner-item mb-md-3 mr-5">
+                        <a title="JetStar Airline">
+                            <img src=" ~/assets/anh/jetstar.png" alt="JetStar Airline" />
+                        </a>
+                    </div>
+                    <div class="partner-item mb-md-3 mr-5">
+                        <a title="Eva Airline">
+                            <img src=" ~/assets/anh/eva-air.png" alt="Eva Airline" />
+                        </a>
+                    </div>
+                    <div class="partner-item mb-md-3 mr-5">
+                        <a title="Emirates Airline">
+                            <img src=" ~/assets/anh/emirates.png" alt="Emirates Airline" />
+                        </a>
+                    </div>
+                    <div class="partner-item mb-md-3 mr-5">
+                        <a title="American Airline">
+                            <img src=" ~/assets/anh/american-airlines.png"
+                                 alt="American Airline" />
+                        </a>
+                    </div>
+                    <div class="partner-item mb-md-3 mr-5">
+                        <a title="Ana Airline">
+                            <img src=" ~/assets/anh/ana.png" alt="Ana Airline" />
+                        </a>
+                    </div>
+                    <div class="partner-item mb-md-3 mr-5">
+                        <a title="United Airline">
+                            <img src=" ~/assets/anh/united-airlines.png" alt="United Airline" />
+                        </a>
+                    </div>
+                    <div class="partner-item mb-md-3 mr-5">
+                        <a title="Japan Airline">
+                            <img src=" ~/assets/anh/japan.png" alt="Japan Airline" />
+                        </a>
+                    </div>
+                    <div class="partner-item mb-md-3 mr-5">
+                        <a title="Quatar Airline">
+                            <img src=" ~/assets/anh/quatar.png" alt="Quatar Airline" />
+                        </a>
+                    </div>
+                    <div class="partner-item mb-md-3 mr-5">
+                        <a title="Malaysia Airline">
+                            <img src=" ~/assets/anh/malaysia.png" alt="Malaysia Airline" />
+                        </a>
+                    </div>
+                    <div class="partner-item mb-md-3 mr-5">
+                        <a title="France Airline">
+                            <img src=" ~/assets/anh/air-france.png" alt="France Airline" />
+                        </a>
+                    </div>
+                    <div class="partner-item mb-md-3 mr-5">
+                        <a title="Canada Airline">
+                            <img src=" ~/assets/anh/air-canada.png" alt="Canada Airline" />
+                        </a>
+                    </div>
+                    <div class="partner-item mb-md-3 mr-5">
+                        <a title="Turkish Airline">
+                            <img src=" ~/assets/anh/turkish-airlines.png"
+                                 alt="Turkish Airline" />
+                        </a>
+                    </div>
+                    <div class="partner-item mb-md-3 mr-5">
+                        <a title="HongKong Airline">
+                            <img src=" ~/assets/anh/hong-kong.png" alt="HongKong Airline" />
+                        </a>
+                    </div>
+                    <div class="partner-item mb-md-3 mr-5">
+                        <a title="China Southen Airline">
+                            <img src=" ~/assets/anh/china-southen.png"
+                                 alt="China Southen Airline" />
+                        </a>
+                    </div>
+                    <div class="partner-item mb-md-3 mr-5">
+                        <a title="China Eastern Airline">
+                            <img src=" ~/assets/anh/china-eastern.png"
+                                 alt="China Eastern Airline" />
+                        </a>
+                    </div>
+                    <div class="partner-item mb-md-3 mr-5">
+                        <a title="China Airline">
+                            <img src=" ~/assets/anh/air-china.png" alt="China Airline" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 my-2">
+                <p class="section-title my-3" title="Hotel partners">
+                    Hotel partners
+                </p>
+                <div class="
+              d-flex
+              flex-nowrap flex-md-wrap
+              overflow-auto
+              align-items-center
+              my-3
+            ">
+                    <div class="partner-item mb-md-3 mr-4">
+                        <a title="Vinpearl">
+                            <img src=" ~/assets/anh/Vinpearl.png" alt="Vinpearl" />
+                        </a>
+                    </div>
+                    <div class="partner-item mb-md-3 mr-4">
+                        <a title="Mường Thanh">
+                            <img src=" ~/assets/anh/MuongThanh.png" alt="Mường Thanh" />
+                        </a>
+                    </div>
+                    <div class="partner-item mb-md-3 mr-4">
+                        <a title="Furama">
+                            <img src=" ~/assets/anh/Furama.png" alt="Furama" />
+                        </a>
+                    </div>
+                    <div class="partner-item mb-md-3 mr-4">
+                        <a title="Pullman">
+                            <img src=" ~/assets/anh/Pullma.png" alt="Pullman" />
+                        </a>
+                    </div>
+                    <div class="partner-item mb-md-3 mr-4">
+                        <a title="The Anam">
+                            <img src=" ~/assets/anh/hotel-partner-5.png" alt="The Anam" />
+                        </a>
+                    </div>
+                    <div class="partner-item mb-md-3 mr-4">
+                        <a title="The Beach">
+                            <img src=" ~/assets/anh/hotel-partner-6.png" alt="The Beach" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 my-2">
+                <p class="section-title my-3" title="Payment partner">
+                    Payment partner
+                </p>
+                <div class="
+              d-flex
+              flex-nowrap flex-md-wrap
+              overflow-auto
+              align-items-center
+              my-3
+            ">
+                    <div class="partner-item mb-md-3 mr-4 mr-md-2">
+                        <a title="Payoo"><img src=" ~/assets/anh/Payoo.png" alt="Payoo" /></a>
+                    </div>
+                    <div class="partner-item mb-md-3 mr-4 mr-md-2">
+                        <a title="One pay">
+                            <img src=" ~/assets/anh/payment.png" alt="One pay" />
+                        </a>
+                    </div>
+                    <div class="partner-item mb-md-3 mr-4 mr-md-2">
+                        <a title="Visa"><img src=" ~/assets/anh/visa.png" alt="Visa" /></a>
+                    </div>
+                    <div class="partner-item mb-md-3 mr-4 mr-md-2">
+                        <a title="Mastercard">
+                            <img src=" ~/assets/anh/master-card.png" alt="Mastercard" />
+                        </a>
+                    </div>
+                    <div class="partner-item mb-md-3 mr-4 mr-md-2">
+                        <a title="VietcomBank">
+                            <img src=" ~/assets/anh/vcb.png" alt="VietcomBank" />
+                        </a>
+                    </div>
+                    <div class="partner-item mb-md-3 mr-4 mr-md-2">
+                        <a title="TechcomBank">
+                            <img src=" ~/assets/anh/tech.png" alt="TechcomBank" />
+                        </a>
+                    </div>
+                    <div class="partner-item mb-md-3 mr-4 mr-md-2">
+                        <a title="circleK">
+                            <img src=" ~/assets/anh/circleK.png" alt="circleK" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+

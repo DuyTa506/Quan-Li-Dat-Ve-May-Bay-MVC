@@ -1,0 +1,38 @@
+﻿@model List<Final_APP.Entities.NguoiDung>
+@{
+    ViewBag.Title = "UserDetail";
+    Layout = "~/Views/Shared/_LayoutIndex.cshtml";
+}
+
+<h2 class="m-5">Danh sách thông tin người dùng </h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Mã người dùng</th>
+            <th scope="col">Họ và tên</th>
+            <th scope="col">Số điện thoại</th>
+            <th scope="col">Email</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.MaNguoiDung</td>
+                <td>@item.HoTen</td>
+                <td>@item.SDT</td>
+                <td>@item.Email</td>
+                <td>
+                    <a href="~/Admin/EditUser?id=@item.MaNguoiDung" class="btn btn-outline-dark">
+                        Sửa
+                    </a>
+                </td>
+            </tr>
+
+        }
+
+    </tbody>
+</table>
+
+

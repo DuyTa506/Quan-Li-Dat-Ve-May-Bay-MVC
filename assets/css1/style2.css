@@ -1,0 +1,676 @@
+﻿body {
+	background: #e7ecee;
+	font-size: 13px;
+	font-weight: 500;
+	background-color:#7a7e8a;
+}
+@font-face {
+	font-family: MuseoSans;
+	src:url(../font/MuseoSansCyrl-500.otf);
+}
+.border {
+	border: 1px solid #dee2e6 !important;
+}
+.flight-detail-form {
+	width: 30%;
+	float: right;
+	background-color: white;
+}
+
+.flight-detail-form-destination {
+	display: flex;
+	padding: 16px;
+	align-items: center;
+	justify-content: center;
+}
+
+.destination {
+	font-size: 14px;
+	line-height: 100%;
+	margin: 0 0 0 12px;
+}
+
+.detail-button {
+	margin-left: auto;
+	padding-left: 8px;
+	font-size: 14px;
+	color: #0770cd;
+	cursor: pointer;
+	font-weight: 700;
+}
+
+.flight-detail-form-more-detail {
+	padding: 16px 16px 0 16px;
+}
+
+.flight-date {
+	font-size: 14px;
+	line-height: 24px;
+	letter-spacing: 0.5px;
+}
+
+.flight-service {
+	display: flex;
+	margin: 12px 0;
+}
+
+.service-name-and-discount {
+	flex: 1;
+}
+
+.name-of-airline {
+	font-size: 14px;
+	line-height: 24px;
+	font-weight: 700;
+}
+
+.flight-time-start-end-consuming {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+.payback-and-date-change {
+	padding: 16px 12px;
+}
+
+.payback {
+	display: flex;
+	align-items: center;
+	color: #8f8f8f;
+}
+
+.date-change {
+	color: #00a651;
+}
+
+.luggage {
+	margin-bottom: 16px;
+}
+
+.form-tien-ich {
+	background-color: #fff;
+	margin-bottom: 16px;
+	flex-direction: column;
+}
+
+.flight-service-header,
+.flight-luggage-service-body-flight,
+.flight-luggage-service-body-customer {
+	display: flex;
+	align-items: center;
+}
+
+.choose-luggage-button {
+	margin-left: auto;
+}
+
+.flight-service-body {
+	display: flex;
+	flex-direction: column;
+	padding: 16px 16px 8px;
+}
+
+.flight-luggage-service-body-flight {
+	margin-bottom: 8px;
+}
+
+.flight-service-header {
+	padding: 12px 16px;
+}
+
+.flight-luggage-service-body-customer {
+	padding-bottom: 8px;
+	margin-top: 8px;
+	margin-right: 16px;
+}
+
+.collapse-arrow .icon {
+	transform: rotate(-180deg);
+	transition: 0.3s transform ease-in-out;
+	display: inline-block;
+}
+
+.collapse-arrow .collapsed .icon {
+	transform: rotate(0deg);
+}
+
+
+.typeword {
+	font-family: MuseoSans;
+}
+hr.n1 {
+	border 1px dotted;
+}
+.payment1 {
+	background-color: #E6EAED;
+}
+
+button, a {
+	outline: none !important;
+	color: #ff3008;
+	text-decoration: none !important;
+}
+
+p {
+	font-size: 13px;
+	color: #7a7e8a;
+}
+
+img {
+	image-rendering: auto;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+	color: #000000;
+}
+/* Nav */
+.payment-nav {
+	background: #fff none repeat scroll 0 0 !important;
+	padding: 0;
+	z-index: 9;
+}
+
+	.payment-nav .nav-link {
+		font-weight: 600;
+		padding: 28px 0px !important;
+		margin: 0 0 0 31px;
+	}
+/*progressbar*/
+#progressbar {
+	margin-bottom: 30px;
+	overflow: hidden;
+	/*CSS counters to number the steps*/
+	counter-reset: step;
+}
+
+	#progressbar li {
+		list-style-type: none;
+		color: white;
+		text-transform: uppercase;
+		font-size: 9px;
+		width: 33.33%;
+		float: left;
+		position: relative;
+	}
+
+		#progressbar li:before {
+			content: counter(step);
+			counter-increment: step;
+			width: 20px;
+			line-height: 20px;
+			display: block;
+			font-size: 10px;
+			color: #333;
+			background: white;
+			border-radius: 3px;
+			margin: 0 auto 5px auto;
+		}
+		/*progressbar connectors*/
+		#progressbar li:after {
+			content: '';
+			width: 100%;
+			height: 2px;
+			background: white;
+			position: absolute;
+			left: -50%;
+			top: 9px;
+			z-index: -1; /*put it behind the numbers*/
+		}
+
+		#progressbar li:first-child:after {
+			/*connector not needed before the first step*/
+			content: none;
+		}
+		/*marking active/completed steps green*/
+		/*The number of the step and the connector before it = green*/
+		#progressbar li.active:before, #progressbar li.active:after {
+			background: #27AE60;
+			color: white;
+		}
+
+/* Payment Page */
+.addresses-item a.btn.btn-sm {
+	min-width: 157px;
+}
+
+.cart-item-profile img {
+	width: 40px;
+	height: 40px;
+	border: 3px solid #fff;
+}
+
+.cart-item-profile p {
+	font-size: 10px;
+}
+
+.payment .nav-link {
+	padding: 18px 20px;
+	border: none;
+	font-weight: 600;
+	color: #535665;
+}
+
+	.payment .nav-link i {
+		width: 28px;
+		height: 28px;
+		background: #535665;
+		display: inline-block;
+		text-align: center;
+		line-height: 29px;
+		font-size: 15px;
+		border-radius: 50px;
+		margin: 0 7px 0 0px;
+	}
+
+.nav-link.active {
+	background-color: #fff;
+}
+
+.payment .nav-link.active {
+	background: #f3f7f8;
+	color: #ffffff !important;
+}
+
+	.payment .nav-link.active i {
+		background: #282c3f !important;
+	}
+
+.payment .tab-content {
+	background: #f3f7f8;
+	outline-color: #e7ecee;
+	outline-style: solid;
+	padding: 20px;
+}
+
+.payment-card i {
+	font-size: 35px;
+	vertical-align: middle;
+	color: #6c757d;
+}
+
+.payment-card {
+	margin: 0 0 0 7px;
+}
+
+.payment-payment label {
+	font-size: 12px;
+	margin: 0 0 3px 0;
+	font-weight: 600;
+}
+body {
+	background: #e7ecee;
+	font-size: 13px;
+	font-weight: 500;
+}
+
+button, a {
+	outline: none !important;
+	color: #ff3008;
+	text-decoration: none !important;
+}
+
+p {
+	font-size: 13px;
+	color: #7a7e8a;
+}
+
+img {
+	image-rendering: auto;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+	color: #000000;
+}
+/* Nav */
+.payment-nav {
+	background: #fff none repeat scroll 0 0 !important;
+	padding: 0;
+	z-index: 9;
+}
+
+	.payment-nav .nav-link {
+		font-weight: 600;
+		padding: 28px 0px !important;
+		margin: 0 0 0 31px;
+	}
+/*progressbar*/
+#progressbar {
+	margin-bottom: 30px;
+	overflow: hidden;
+	/*CSS counters to number the steps*/
+	counter-reset: step;
+}
+
+	#progressbar li {
+		list-style-type: none;
+		color: white;
+		text-transform: uppercase;
+		font-size: 9px;
+		width: 33.33%;
+		float: left;
+		position: relative;
+	}
+
+		#progressbar li:before {
+			content: counter(step);
+			counter-increment: step;
+			width: 20px;
+			line-height: 20px;
+			display: block;
+			font-size: 10px;
+			color: #333;
+			background: white;
+			border-radius: 3px;
+			margin: 0 auto 5px auto;
+		}
+		/*progressbar connectors*/
+		#progressbar li:after {
+			content: '';
+			width: 100%;
+			height: 2px;
+			background: white;
+			position: absolute;
+			left: -50%;
+			top: 9px;
+			z-index: -1; /*put it behind the numbers*/
+		}
+
+		#progressbar li:first-child:after {
+			/*connector not needed before the first step*/
+			content: none;
+		}
+		/*marking active/completed steps green*/
+		/*The number of the step and the connector before it = green*/
+		#progressbar li.active:before, #progressbar li.active:after {
+			background: #27AE60;
+			color: white;
+		}
+
+/* Payment Page */
+.addresses-item a.btn.btn-sm {
+	min-width: 157px;
+}
+
+.cart-item-profile img {
+	width: 40px;
+	height: 40px;
+	border: 3px solid #fff;
+}
+
+.cart-item-profile p {
+	font-size: 10px;
+}
+
+.payment .nav-link {
+	padding: 18px 20px;
+	border: none;
+	font-weight: 600;
+	color: #535665;
+}
+
+	.payment .nav-link i {
+		width: 28px;
+		height: 28px;
+		background: #535665;
+		display: inline-block;
+		text-align: center;
+		line-height: 29px;
+		font-size: 15px;
+		border-radius: 50px;
+		margin: 0 7px 0 0px;
+	}
+.borderradius {
+	border-radius: 5px;
+}
+.nav-link.active {
+	background-color: #fff;
+}
+
+.payment .nav-link.active {
+	background: #f3f7f8;
+	color: #ffffff !important;
+}
+
+	.payment .nav-link.active i {
+		background: #282c3f !important;
+	}
+
+.payment .tab-content {
+	background: #f3f7f8;
+	outline-color: #e7ecee;
+	outline-style: solid;
+	padding: 20px;
+}
+
+.payment-card i {
+	font-size: 35px;
+	vertical-align: middle;
+	color: #6c757d;
+}
+
+.payment-card {
+	margin: 0 0 0 7px;
+}
+
+.payment-payment label {
+	font-size: 12px;
+	margin: 0 0 3px 0;
+	font-weight: 600;
+}
+/**/
+.contax {
+	max-width: 900px;
+	width: 100%;
+	padding: 25px 30px;
+	border-radius: 4px 4px 0 0;
+	box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+}
+	.contax .title {
+		font-size: 25px;
+		font-weight: 500;
+		position: relative;
+	}
+
+		.contax .title::before {
+			content: "";
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			height: 3px;
+			width: 30px;
+			border-radius: 5px;
+			background: linear-gradient(135deg, #71b7e6, #9b59b6);
+		}
+.user-details .input-box input {
+	height: 45px;
+	width: 100%;
+	outline: none;
+	font-size: 16px;
+	border-radius: 5px;
+	padding-left: 15px;
+	border: 1px solid #ccc;
+	border-bottom-width: 2px;
+	transition: all 0.3s ease;
+}
+
+	.user-details .input-box input:focus,
+	.user-details .input-box input:valid {
+		border-color: #9b59b6;
+	}
+.forms-contact,
+.contact-info {
+	border-radius: 5px;
+}
+
+.forms-contact {
+	width: 67%;
+	margin-right: 3%;
+	float: left;
+}
+
+.forms-contact-main-account {
+	display: flex;
+	background-color: #fff;
+	padding: 12px 16px;
+	background-position: 108% 50%;
+	background-repeat: no-repeat;
+}
+
+.forms-contact-main-account-icon {
+	background-color: #0194f3;
+	text-align: center;
+	padding: 8px;
+	margin-top: 4px;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	background-size: cover;
+	background-position: 50%;
+	margin-right: 16px;
+}
+
+.contact-info {
+	background-color: white;
+}
+
+.contact-info-heading {
+	margin-top: 40px;
+	padding-bottom: 16px;
+}
+
+.contact-info-name-and-change,
+.contact-info-phone-and-email {
+	padding: 16px;
+}
+
+.contact-info-name {
+	float: left;
+	font-size: 16px;
+}
+
+.contact-info-change-button {
+	float: right;
+}
+
+.contact-info-phone-and-email {
+	display: flex;
+}
+
+.contact-info-phone {
+	width: 33.3%;
+	display: inline-block;
+}
+
+.contact-info-mail {
+	width: 66.6%;
+	display: inline-block;
+}
+
+form input[type="radio"] {
+	display: none;
+}
+.custom1 {
+	width: 141px;
+	height:45px;
+	
+}
+.bg-a {
+	background-image: url('../anh/nen.png');
+	/*height ="20vh";
+	width ="50vh";*/
+	background-size: cover;
+}
+headerbg {
+	display: flex;
+}
+
+	.headerbg.solid {
+		border-style: solid;
+		border-width: 2px;
+	}
+	.headerbg h1 {
+		width: 60%;
+	}
+
+.nav-item-text {
+	padding-left: 20px;
+	opacity: 0.6;
+	font-size: 14px;
+}
+
+.nav-item-number {
+	background-color: #434343;
+	border-radius: 50%;
+	color: #fff;
+	margin-right: 4px;
+	width: 16px;
+	height: 16px;
+	float: left;
+	text-align: center;
+	opacity: 0.5;
+}
+/*
+.container-fluid {
+	box-shadow: 0 0 4px 2px rgb(0 0 0 / 14%);
+}
+*/
+.header {
+	width: 960px;
+	margin: 0 auto;
+	height: 75px;
+	padding: 16px 0;
+
+}
+
+ul {
+	height: 100%;
+	align-items: center;
+}
+
+li {
+	line-height: 100%;
+	display: inline-block;
+	position: relative;
+	padding-left: 28px;
+	margin-right: 8px;
+}
+
+.item-2::before,
+.item-3::before,
+.item-4::before {
+	content: "";
+	display: block;
+	position: absolute;
+	width: 16px;
+	height: 2px;
+	background: #434343;
+	left: 0px;
+	top: 50%;
+	opacity: 0.2;
+	border-top: 2px solid #434343;
+}
+
+.footer {
+	background-color: #e6eaed;
+	width: 100%;
+	overflow: hidden;
+}
+
+.footer-button {
+	float: right;
+	display: block;
+	background-color: #007ce8;
+	position: fixed;
+	top: 86%;
+	left: 86%;
+	padding: 12px 16px;
+	border-radius: 50px;
+	box-shadow: 0 4px 8px 0 rgb(27 27 27 / 20%), 0 16px 24px 0 rgb(27 27 27 / 20%);
+}
+
+	.footer-button > a {
+		color: white;
+		text-decoration: none;
+	}
+

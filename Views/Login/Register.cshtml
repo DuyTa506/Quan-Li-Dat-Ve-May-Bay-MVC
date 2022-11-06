@@ -1,0 +1,78 @@
+﻿@model Final_APP.Entities.TaiKhoan
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+}
+@using (Html.BeginForm("Register", "Login", FormMethod.Post))
+{
+    @Html.ValidationSummary()
+    @Html.AntiForgeryToken()
+    <div class="mb-3">
+        <label for="username" class="form-label">Tên đăng nhập</label>
+        @Html.TextBoxFor(m => m.TenDangNhap, new { @class = "form-control", @placeholder = "Vui lòng nhập tên đăng nhập" })
+        @Html.ValidationMessageFor(m => m.TenDangNhap, "", new { @class = "badge badge-danger" })
+    </div>
+    <div class="mb-3 form-password-toggle">
+        <label class="form-label" for="password">Mật khẩu</label>
+        <div class="input-group input-group-merge">
+            @Html.PasswordFor(m => m.MatKhau, new { @class = "form-control", @placeholder = "*******************" })
+            @Html.ValidationMessageFor(m => m.MatKhau, "", new { @class = "badge badge-danger" })
+            <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
+        </div>
+    </div>
+    <div class="mb-3 form-password-toggle">
+        <label class="form-label" for="password"> Nhập lại mật khẩu</label>
+        <div class="input-group input-group-merge">
+            @Html.PasswordFor(m => m.MatKhau, new { @class = "form-control", @placeholder = "Confim Password" })
+            @Html.ValidationMessageFor(m => m.MatKhau, "", new { @class = "badge badge-danger" })
+            <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
+
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="terms-conditions" name="terms" />
+            <label class="form-check-label" for="terms-conditions">
+                I agree to
+                <a href="javascript:void(0);">privacy policy & terms</a>
+            </label>
+        </div>
+    </div>
+    <button class="btn btn-primary d-grid w-100">Sign up</button>
+}
+
+<p class="text-center">
+    <span>Already have an account?</span>
+    <a href="auth-login-basic.html">
+        <span>Sign in instead</span>
+    </a>
+</p>
+                    </div>
+                </div>
+<!-- Register Card -->
+            </div>
+        </div>
+    </div>
+
+<!-- / Content -->
+<!-- Core JS -->
+<!-- build:js assets/vendor/js/core.js -->
+<script src="../assets/vendor/libs/jquery/jquery.js"></script>
+<script src="../assets/vendor/libs/popper/popper.js"></script>
+<script src="../assets/vendor/js/bootstrap.js"></script>
+<script src="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+
+<script src="../assets/vendor/js/menu.js"></script>
+<!-- endbuild -->
+<!-- Vendors JS -->
+<!-- Main JS -->
+<script src="../assets/js/main.js"></script>
+
+<!-- Page JS -->
+<!-- Place this tag in your head or just before your close body tag. -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+        </body>
+        </html>
+
+

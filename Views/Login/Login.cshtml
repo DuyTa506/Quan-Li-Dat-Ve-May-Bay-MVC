@@ -1,0 +1,95 @@
+﻿@model Final_APP.Entities.TaiKhoan
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+}
+@using (Html.BeginForm("Login", "Login", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    
+    <span class="badge badge-danger">@ViewBag.sucess</span>
+    
+
+    <form id="formAuthentication" class="mb-3">
+        <div class="mb-3">
+            <label for="email" class="form-label">Username</label>
+            <input data-val="true"
+                   data-val-length="The field TenDangNhap must be a string with a maximum length of 30."
+                   data-val-length-max="30"
+                   id="TenDangNhap"
+                   name="TenDangNhap"
+                   value=""
+                   type="text"
+                   class="form-control"
+                   placeholder="Enter your Username"
+                   autofocus />
+            @Html.ValidationMessageFor(a => a.TenDangNhap)
+        </div>
+        <div class="mb-3 form-password-toggle">
+            <div class="d-flex justify-content-between">
+                <label class="form-label" for="password">Password</label>
+                <a href="">
+                    <small>Forgot Password?</small>
+                </a>
+            </div>
+            <div class="input-group input-group-merge">
+                <input data-val="true"
+                       data-val-length="The field MatKhau must be a string with a maximum length of 30."
+                       data-val-length-max="30"
+                       data-val-required="The MatKhau field is required."
+                       id="MatKhau"
+                       name="MatKhau"
+                       type="password"
+                       class="form-control"
+                       name="password"
+                       placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
+                       aria-describedby="password" />
+                <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
+            </div>
+            @Html.ValidationMessageFor(a => a.TenDangNhap)
+        </div>
+        <div class="mb-3">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="remember-me" />
+                <label class="form-check-label" for="remember-me"> Remember Me </label>
+            </div>
+        </div>
+        <div class="mb-3">
+            <button class="btn btn-primary d-grid w-100" type="submit">Sign in</button>
+        </div>
+    </form>
+}
+<p class="text-center">
+    <span>New on our platform?</span>
+    <a href="~/Admin/Register">
+        <span>Create an account</span>
+    </a>
+</p>
+            </div>
+          </div>
+<!-- /Register -->
+        </div>
+      </div>
+    </div>
+
+<!-- / Content -->
+<!-- Core JS -->
+<!-- build:js assets/vendor/js/core.js -->
+<script src="../assets/vendor/libs/jquery/jquery.js"></script>
+<script src="../assets/vendor/libs/popper/popper.js"></script>
+<script src="../assets/vendor/js/bootstrap.js"></script>
+<script src="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+
+<script src="../assets/vendor/js/menu.js"></script>
+<!-- endbuild -->
+<!-- Vendors JS -->
+<!-- Main JS -->
+<script src="../assets/js/main.js"></script>
+
+<!-- Page JS -->
+<!-- Place this tag in your head or just before your close body tag. -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+  </body>
+</html>
+

@@ -1,0 +1,281 @@
+﻿body {
+  background: #e7ecee;
+  font-size: 13px;
+  font-weight: 500;
+}
+.flight-time-start-end-consuming {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.payback-and-date-change {
+  padding: 16px 12px;
+}
+
+.payback {
+  display: flex;
+  align-items: center;
+  color: #8f8f8f;
+}
+
+.date-change {
+  color: #00a651;
+}
+
+.luggage {
+  margin-bottom: 16px;
+}
+
+.footer {
+  background-color: #e6eaed;
+  width: 100%;
+  overflow: hidden;
+}
+
+.footer-button {
+  float: right;
+  display: block;
+  background-color: #007ce8;
+  position: fixed;
+  top: 86%;
+  left: 86%;
+  padding: 12px 16px;
+  border-radius: 50px;
+  box-shadow: 0 4px 8px 0 rgb(27 27 27 / 20%), 0 16px 24px 0 rgb(27 27 27 / 20%);
+}
+
+.footer-button > a {
+  color: white;
+  text-decoration: none;
+}
+
+@font-face {
+  font-family: MuseoSans;
+  src: url(../font/MuseoSansCyrl-500.otf);
+}
+.typeword {
+  font-family: MuseoSans;
+}
+.payment1 {
+  background-color: #e6eaed;
+}
+
+button,
+a {
+  outline: none !important;
+  color: #ff3008;
+  text-decoration: none !important;
+}
+
+p {
+  font-size: 13px;
+  color: #7a7e8a;
+}
+
+img {
+  image-rendering: auto;
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #000000;
+}
+/* Nav */
+.payment-nav {
+  background: #fff none repeat scroll 0 0 !important;
+  padding: 0;
+  z-index: 9;
+}
+
+.payment-nav .nav-link {
+  font-weight: 600;
+  padding: 28px 0px !important;
+  margin: 0 0 0 31px;
+}
+/*progressbar*/
+#progressbar {
+  margin-bottom: 30px;
+  overflow: hidden;
+  /*CSS counters to number the steps*/
+  counter-reset: step;
+}
+
+#progressbar li {
+  list-style-type: none;
+  color: white;
+  text-transform: uppercase;
+  font-size: 9px;
+  width: 33.33%;
+  float: left;
+  position: relative;
+}
+
+#progressbar li:before {
+  content: counter(step);
+  counter-increment: step;
+  width: 20px;
+  line-height: 20px;
+  display: block;
+  font-size: 10px;
+  color: #333;
+  background: white;
+  border-radius: 3px;
+  margin: 0 auto 5px auto;
+}
+/*progressbar connectors*/
+#progressbar li:after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  background: white;
+  position: absolute;
+  left: -50%;
+  top: 9px;
+  z-index: -1; /*put it behind the numbers*/
+}
+
+#progressbar li:first-child:after {
+  /*connector not needed before the first step*/
+  content: none;
+}
+/*marking active/completed steps green*/
+/*The number of the step and the connector before it = green*/
+#progressbar li.active:before,
+#progressbar li.active:after {
+  background: #27ae60;
+  color: white;
+}
+
+/* Payment Page */
+.addresses-item a.btn.btn-sm {
+  min-width: 157px;
+}
+
+.cart-item-profile img {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #fff;
+}
+
+.cart-item-profile p {
+  font-size: 10px;
+}
+
+.payment .nav-link {
+  padding: 18px 20px;
+  border: none;
+  font-weight: 600;
+  color: #535665;
+}
+
+.payment .nav-link i {
+  width: 28px;
+  height: 28px;
+  background: #535665;
+  display: inline-block;
+  text-align: center;
+  line-height: 29px;
+  font-size: 15px;
+  border-radius: 50px;
+  margin: 0 7px 0 0px;
+}
+
+.nav-link.active {
+  background-color: #fff;
+}
+
+.payment .nav-link.active {
+  background: #f3f7f8;
+  color: #ffffff !important;
+}
+
+.payment .nav-link.active i {
+  background: #282c3f !important;
+}
+
+.payment .tab-content {
+  background: #f3f7f8;
+  padding: 20px;
+}
+
+.payment-card i {
+  font-size: 35px;
+  vertical-align: middle;
+  color: #6c757d;
+}
+
+.payment-card {
+  margin: 0 0 0 7px;
+}
+
+.payment-payment label {
+  font-size: 12px;
+  margin: 0 0 3px 0;
+  font-weight: 600;
+}
+.custom1 {
+  width: 141px;
+  height: 45px;
+}
+.nav-item-text {
+  padding-left: 20px;
+  opacity: 0.6;
+  font-size: 14px;
+}
+.nav-item-number {
+  background-color: #434343;
+  border-radius: 50%;
+  color: #fff;
+  margin-right: 4px;
+  width: 16px;
+  height: 16px;
+  float: left;
+  text-align: center;
+  opacity: 0.5;
+}
+.container-fluid {
+  box-shadow: 0 0 4px 2px rgb(0 0 0 / 14%);
+}
+.header {
+  width: 960px;
+  margin: 0 auto;
+  height: 75px;
+  padding: 16px 0;
+}
+ul {
+  height: 100%;
+  align-items: center;
+}
+
+li {
+  line-height: 100%;
+  display: inline-block;
+  position: relative;
+  padding-left: 28px;
+  margin-right: 8px;
+}
+.item-2::before,
+.item-3::before,
+.item-4::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 16px;
+  height: 2px;
+  background: #434343;
+  left: 0px;
+  top: 50%;
+  opacity: 0.2;
+  border-top: 2px solid #434343;
+}

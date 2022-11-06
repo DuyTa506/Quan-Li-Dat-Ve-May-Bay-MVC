@@ -1,0 +1,259 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>@ViewBag.Title</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+    <!--Js libraries-->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="~/assets/css1/mainmaybay.css" rel="stylesheet">
+    <link href="~/assets/css1/about.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/assets/css1/khuyenmai.css">
+</head>
+
+<body>
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-dark pt-3 d-none d-lg-block">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 text-center text-white text-lg-left mb-2 mb-lg-0">
+                    <div class="d-inline-flex align-items-center">
+                        <p style="color: #D9a404"><i class="fa fa-envelope mr-2" style="color:#D9a404"></i>Banana@airline.com</p>
+                        <p class="text-body px-3">|</p>
+                        <p style="color: #D9a404"><i class="fa fa-phone-alt mr-2" style="color: #D9a404"></i>+012 345 6789</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center text-lg-right">
+                    <div class="d-inline-flex align-items-center">
+                        <a class="text-primary px-3" href="https://www.facebook.com/Banana-Airlines-109535575252958">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a class="text-primary px-3" href="">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a class="text-primary px-3" href="">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a class="text-primary px-3" href="">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a class="text-primary px-3" href="">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                    <a href="./login.html" class="btn btn-primary mt-2 ">Đăng nhập / Đăng ký</a>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- Topbar End -->
+    <!-- Navbar Start -->
+    <div class="container-fluid position-relative nav-bar p-0">
+        <div class="container-lg position-relative p-0 px-lg-3" style="z-index: 9;">
+            <nav class="navbar navbar-expand-lg bg-white navbar-light shadow-lg py-3 py-lg-0 pl-3 pl-lg-5">
+                <a href="~/Home/Index" class="navbar-brand pl-2">
+                    <h1 class="m-0 text-primary"><span class="text-dark">BANANA</span> AIRLINES <img class="img-fluid w-10  bg-white " src="/Content/anh/logo2.jpg" alt=""></h1>
+
+                </a>
+
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-between px-0" id="navbarCollapse">
+                    <div class="navbar-nav ml-auto py-0">
+                        <a href="~/Home/Gioithieu" class="nav-item nav-link strong ">Giới Thiệu</a>
+                        <a href="~/Home/LienHe" class="nav-item nav-link strong">Liên Hệ</a>
+                        <a href="~/Home/Khuyenmai" class="nav-item nav-link strong">KM</a>
+                        <div class="nav-item dropdown ">
+                            <a href="#" class="nav-link dropdown-toggle strong" data-toggle="dropdown">Khác</a>
+                            <div class="dropdown-menu ">
+                                <a href="~/Home/Diemdenyeuthich" class="dropdown-item ">Điểm đến yêu thích</a>
+                                <a href="~/Home/Camnangdulich" class="dropdown-item">Cẩm nang du lịch</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- Navbar End -->
+    <!-- Header Start -->
+    <div class="container-fluid page-header">
+        <div class="container">
+            <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 400px">
+                <h3 href="main.html" class="display-4 text-white text-uppercase">@ViewBag.Title</h3>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- Header End -->
+    <!-- Workflow @@==-->
+    <div class="container typeword">
+        <div class="my-3">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb rounded-0 px-0 py-2">
+                    <li class="breadcrumb-item" aria-current="page">
+                        <a href="./main.html"
+                           class="text-truncate text-info fondsize"
+                           title="@ViewBag.Title1">@ViewBag.Title1</a>
+                    </li>
+                    <li class="breadcrumb-item active" aria-current="page">
+                        <a href="./gioithieu.html"
+                           class="cam-color fondsize"
+                           title="@ViewBag.Title2">@ViewBag.Title2</a>
+                    </li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <!--Slider show-->
+    @RenderSection("Slide", required: false)
+    @RenderBody()
+    <!-- Footer start-->
+
+
+    <section id="end-page">
+        <div class="footer py-5 bg-dark">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-md-4">
+
+                        <a href="#" class="navbar-brand">
+                            <h2 class="m-0 text-primary"><span class="text-white">BANANA</span> AIRLINES  </h2>
+                        </a>
+                        <br> <br>
+                        <p class="text-white">
+                            Chúng tôi cam kết mang lại những trải nghiệm tuyệt vời đến các bạn.
+
+                        </p>
+
+                        <p class="text-white">
+                            Xin trân trọng cám ơn sự đồng hành của Qúy khách!
+                        </p>
+                        <div class="d-flex justify-content-start mt-4">
+                            <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0"
+                               style="width: 38px; height: 38px;" href="#"><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0"
+                               style="width: 38px; height: 38px;" href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0"
+                               style="width: 38px; height: 38px;" href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0"
+                               style="width: 38px; height: 38px;" href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="ml-auto d-md-block d-none">
+
+
+                        <span class="ti-search search-icon text-light"></span>
+                    </div>
+
+
+
+
+                    <div class="col-md-3">
+                        <h4 class="text-white">Thông tin thêm</h4>
+                        <nav class="nav flex-column my-3 footer-web-info">
+                            <a style="color: #ffffff;"
+                               href="#"
+                               title="Điều khoản sử dụng">Điều khoản sử dụng</a>
+                            <a style="color: #ffffff;"
+                               href="#"
+                               title="Chính sách bảo mật">Chính sách bảo mật</a>
+                            <a style="color: #ffffff;"
+                               href="#"
+                               title="Hướng dẫn đặt vé">Hướng dẫn đặt vé</a>
+                            <a style="color: #ffffff;"
+                               href="#"
+                               title="Hướng dẫn đặt vé">Hướng dẫn thanh toán</a>
+                        </nav>
+                    </div>
+
+                    <div class="col-md-2">
+                        <h4 class="text-white">Hỗ trợ</h4>
+                        <nav class="nav flex-column my-3 footer-web-info">
+                            <a style="color: #ffffff;"
+                               href="javascript:void 0"
+                               title="Phản hồi">Phản hồi</a>
+                            <a style="color: #ffffff;"
+                               href="#"
+                               title="Câu hỏi thường gặp">Câu hỏi thường gặp</a>
+                            <a style="color: #ffffff;"
+                               href="#"
+                               title="Tư vấn hỗ trợ đặt vé">Tư vấn hỗ trợ đặt vé</a>
+                        </nav>
+                    </div>
+                    <div class="col-md-3">
+                        <h4 class="text-white">Liên hệ với chúng tôi</h4>
+                        <br>
+                        <div class="d-flex">
+                            <h4 class="fa fa-map-marker-alt text-primary"></h4>
+                            <div class="pl-3">
+                                <h5 style="color: #D9a404;">Địa chỉ</h5>
+                                <p style="color: #ffffff;">236, Hoàng Quốc Việt, Bắc Từ Liêm, Hà Nội</p>
+                            </div>
+                        </div>
+                        <div class="d-flex">
+                            <h4 class="fa fa-envelope text-primary"></h4>
+                            <div class="pl-3">
+                                <h5 style="color: #D9a404;">Email</h5>
+                                <p style="color: #ffffff;">customer@banana_airline.com</p>
+                            </div>
+                        </div>
+                        <div class="d-flex">
+                            <h4 class="fa fa-phone-alt text-primary"></h4>
+                            <div class="pl-3">
+                                <h5 style="color: #D9a404;">Hotline</h5>
+                                <p style="color: #ffffff;">+012 345 67890</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr color="white" align="right" size="5px">
+            <div class="container-fluid p-0 " style="color: #20211F;">
+                <p class="text-center" style="color: #ffffff">
+                    <a>Công ty TNHH BANANA AIRLINE</a> <br>
+                    <a>Coppyright</a>&copy;<a class="text-primary font-weight-bold" href="#"> 2022 BANANA </a> <br>
+                </p>
+            </div>
+        </div>
+    </section>
+    <!-- Footer End -->
+    <!-- Back to Top -->
+    <a href="about.html" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+
+
+</body>
+
+</html>

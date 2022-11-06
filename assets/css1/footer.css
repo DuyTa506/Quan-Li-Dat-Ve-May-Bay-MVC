@@ -1,0 +1,22 @@
+﻿.footer {
+	background-color: #0487d9 ;
+	width: 100%;
+	overflow: hidden;
+}
+
+.footer-button {
+	float: right;
+	display: block;
+	background-color: #ffffff;
+	position: fixed;
+	top: 86%;
+	left: 86%;
+	padding: 12px 16px;
+	border-radius: 50px;
+	box-shadow: 0 4px 8px 0 rgb(27 27 27 / 20%), 0 16px 24px 0 rgb(27 27 27 / 20%);
+}
+
+	.footer-button > a {
+		color: #ffffff;
+		text-decoration: none;
+	}

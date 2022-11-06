@@ -1,0 +1,962 @@
+﻿@font-face {
+  font-family: Museo Sans;
+  src: url(../font/MuseoSansCyrl-500.otf);
+}
+optgroup {
+  font-family: Museo Sans;
+}
+/*  SECTIONS  ============================================================================= */
+html {
+  overflow: scroll;
+  font-family: Museo Sans;
+}
+
+.header {
+  margin: 0 auto;
+  height: 50px;
+  background-color: #343a40;
+  margin-bottom: 20px;
+}
+
+body {
+  background-color: #e6eaed;
+  overflow: auto;
+}
+
+.tenchuyenbay {
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: #f7f9fa;
+}
+
+.b .btn {
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #d9a404;
+  padding: 10px 15px;
+  border-radius: 20px;
+  margin: 0 10px;
+  width: 150px;
+  display: inline-block;
+  text-align: center;
+}
+
+.b.btn .fas {
+  margin-right: 5px;
+}
+
+.row {
+  margin: 0px;
+}
+
+.b {
+  transform: translateY(40%);
+}
+
+.row .a {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  border: 2px solid transparent;
+  background-color: #ffffff;
+  padding-left: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-bottom-right-radius: 100px;
+  border-top-right-radius: 100px;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+.boloc {
+  margin-top: 60px;
+}
+
+.boloc ul li {
+  list-style: none;
+  display: inline-block;
+  margin-left: 27px;
+}
+
+.thongtin {
+  padding: 0px;
+  border: 1px solid black;
+  margin-top: 60px;
+  border-radius: 10px;
+  /*box-shadow: 3px 5px 10px rgb(109, 89, 89);*/
+  background-color: #ffffff;
+}
+
+.thongtinhien ul li img {
+  width: 150px;
+}
+
+.thongtinhien ul li {
+  padding-right: 56px;
+  display: inline-block;
+  list-style: none;
+  margin-left: 10px;
+  text-align: center;
+  vertical-align: top;
+}
+li > img {
+  padding-top: 30px;
+}
+
+.thongtinhien ul .icon-plane {
+  transform: translateY(110%);
+  color: #3399ff;
+}
+
+.thongtinhien {
+  padding-bottom: 20px;
+  /*box-shadow: 3px 5px 10px rgb(109, 89, 89);*/
+  border: 0.1px solid transparent;
+}
+
+.thongtinhien li .btn {
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #d9a404;
+  padding: 10px 30px;
+  border-radius: 20px;
+  margin: 0 10px;
+  width: 100px;
+  display: inline-block;
+  text-align: center;
+  margin-top: 15px;
+}
+
+[class^="thongtinchitiet"] {
+  display: none;
+  padding-left: 60px;
+  /* padding: 20px; */
+}
+
+thoigian {
+  padding-left: 10px;
+}
+
+.thongtin {
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+}
+
+.b.small-icon {
+  color: #ffffff;
+  font-size: 130%;
+  margin-right: 10px;
+}
+
+[id^="chitiet"] {
+  margin-left: 10%;
+  text-decoration: none;
+  transform: translateY(20%);
+  color: blue;
+}
+
+[id^="chitiet"]:active,
+[id^="chitiet"]:hover {
+  border: 2px solid red;
+  border-radius: 5px;
+}
+
+.price {
+  color: hsl(39, 100%, 50%);
+  font-size: 150%;
+  font-weight: 300;
+  text-align: center;
+}
+
+ul li {
+  list-style: none;
+}
+
+.thongtin:hover {
+  border: 1px solid blue;
+}
+
+.item {
+  width: 114%;
+  border: 1px solid #ffffff;
+  /* color: blue; */
+  color: black;
+  border-radius: 11px;
+  padding: 5px;
+}
+
+.thongtinbay,
+.mid {
+  display: flex;
+}
+
+.ve {
+  border: 0.5px solid black;
+  margin-left: 120px;
+  width: 700px;
+}
+
+.mid,
+.thongtinbay {
+  position: relative;
+}
+
+.line {
+  position: absolute;
+  margin-left: 50px;
+  height: 50px;
+  vertical-align: middle;
+  top: -50px;
+  right: 807px;
+}
+
+.thongtinbay {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.giobay {
+  position: absolute;
+}
+
+.b.btn:active,
+.b.btn:hover {
+  background-color: orange;
+}
+
+.thongtinhien li .btn :active,
+.thongtinhien li .btn :hover {
+  background-color: orange;
+}
+
+.icon {
+  color: #3399ff;
+}
+.section {
+  clear: both;
+  padding: 0px;
+  margin: 0px;
+}
+
+/*  GROUPING  ============================================================================= */
+
+.row {
+  zoom: 1; /* For IE 6/7 (trigger hasLayout) */
+}
+
+.row:before,
+.row:after {
+  content: "";
+  display: table;
+}
+
+.row:after {
+  clear: both;
+}
+
+/*  GRID COLUMN SETUP   ==================================================================== */
+
+.col {
+  display: block;
+  float: left;
+  margin: 1% 0 1% 1.6%;
+}
+
+.col:first-child {
+  margin-left: 0;
+}
+/* all browsers except IE6 and lower */
+
+/*  REMOVE MARGINS AS ALL GO FULL WIDTH AT 480 PIXELS */
+
+@media only screen and (max-width: 480px) {
+  .col {
+    /*margin: 1% 0 1% 0%;*/
+    margin: 0;
+  }
+}
+
+/*  GRID OF TWO   ============================================================================= */
+
+.span-2-of-2 {
+  width: 100%;
+}
+
+.span-1-of-2 {
+  width: 49.2%;
+}
+
+/*  GO FULL WIDTH AT LESS THAN 480 PIXELS */
+
+@media only screen and (max-width: 480px) {
+  .span-2-of-2 {
+    width: 100%;
+  }
+
+  .span-1-of-2 {
+    width: 100%;
+  }
+}
+
+/*  GRID OF THREE   ============================================================================= */
+
+.span-3-of-3 {
+  width: 100%;
+}
+
+.span-2-of-3 {
+  width: 66.13%;
+}
+
+.span-1-of-3 {
+  width: 32.26%;
+}
+
+/*  GO FULL WIDTH AT LESS THAN 480 PIXELS */
+
+@media only screen and (max-width: 480px) {
+  .span-3-of-3 {
+    width: 100%;
+  }
+
+  .span-2-of-3 {
+    width: 100%;
+  }
+
+  .span-1-of-3 {
+    width: 100%;
+  }
+}
+
+/*  GRID OF FOUR   ============================================================================= */
+
+.span-4-of-4 {
+  width: 100%;
+}
+
+.span-3-of-4 {
+  width: 74.6%;
+}
+
+.span-2-of-4 {
+  width: 49.2%;
+}
+
+.span-1-of-4 {
+  width: 23.8%;
+}
+
+/*  GO FULL WIDTH AT LESS THAN 480 PIXELS */
+
+@media only screen and (max-width: 480px) {
+  .span-4-of-4 {
+    width: 100%;
+  }
+
+  .span-3-of-4 {
+    width: 100%;
+  }
+
+  .span-2-of-4 {
+    width: 100%;
+  }
+
+  .span-1-of-4 {
+    width: 100%;
+  }
+}
+
+/*  GRID OF FIVE   ============================================================================= */
+
+.span-5-of-5 {
+  width: 100%;
+}
+
+.span-4-of-5 {
+  width: 79.68%;
+}
+
+.span-3-of-5 {
+  width: 59.36%;
+}
+
+.span-2-of-5 {
+  width: 39.04%;
+}
+
+.span-1-of-5 {
+  width: 18.72%;
+}
+
+/*  GO FULL WIDTH AT LESS THAN 480 PIXELS */
+
+@media only screen and (max-width: 480px) {
+  .span-5-of-5 {
+    width: 100%;
+  }
+
+  .span-4-of-5 {
+    width: 100%;
+  }
+
+  .span-3-of-5 {
+    width: 100%;
+  }
+
+  .span-2-of-5 {
+    width: 100%;
+  }
+
+  .span-1-of-5 {
+    width: 100%;
+  }
+}
+
+/*  GRID OF SIX   ============================================================================= */
+
+.span-6-of-6 {
+  width: 100%;
+}
+
+.span-5-of-6 {
+  width: 83.06%;
+}
+
+.span-4-of-6 {
+  width: 66.13%;
+}
+
+.span-3-of-6 {
+  width: 49.2%;
+}
+
+.span-2-of-6 {
+  width: 32.26%;
+}
+
+.span-1-of-6 {
+  width: 15.33%;
+}
+
+/*  GO FULL WIDTH AT LESS THAN 480 PIXELS */
+
+@media only screen and (max-width: 480px) {
+  .span-6-of-6 {
+    width: 100%;
+  }
+
+  .span-5-of-6 {
+    width: 100%;
+  }
+
+  .span-4-of-6 {
+    width: 100%;
+  }
+
+  .span-3-of-6 {
+    width: 100%;
+  }
+
+  .span-2-of-6 {
+    width: 100%;
+  }
+
+  .span-1-of-6 {
+    width: 100%;
+  }
+}
+
+/*  GRID OF SEVEN   ============================================================================= */
+
+.span-7-of-7 {
+  width: 100%;
+}
+
+.span-6-of-7 {
+  width: 85.48%;
+}
+
+.span-5-of-7 {
+  width: 70.97%;
+}
+
+.span-4-of-7 {
+  width: 56.45%;
+}
+
+.span-3-of-7 {
+  width: 41.94%;
+}
+
+.span-2-of-7 {
+  width: 27.42%;
+}
+
+.span-1-of-7 {
+  width: 12.91%;
+}
+
+/*  GO FULL WIDTH AT LESS THAN 480 PIXELS */
+
+@media only screen and (max-width: 480px) {
+  .span-7-of-7 {
+    width: 100%;
+  }
+
+  .span-6-of-7 {
+    width: 100%;
+  }
+
+  .span-5-of-7 {
+    width: 100%;
+  }
+
+  .span-4-of-7 {
+    width: 100%;
+  }
+
+  .span-3-of-7 {
+    width: 100%;
+  }
+
+  .span-2-of-7 {
+    width: 100%;
+  }
+
+  .span-1-of-7 {
+    width: 100%;
+  }
+}
+
+/*  GRID OF EIGHT   ============================================================================= */
+
+.span-8-of-8 {
+  width: 100%;
+}
+
+.span-7-of-8 {
+  width: 87.3%;
+}
+
+.span-6-of-8 {
+  width: 74.6%;
+}
+
+.span-5-of-8 {
+  width: 61.9%;
+}
+
+.span-4-of-8 {
+  width: 49.2%;
+}
+
+.span-3-of-8 {
+  width: 36.5%;
+}
+
+.span-2-of-8 {
+  width: 23.8%;
+}
+
+.span-1-of-8 {
+  width: 11.1%;
+}
+
+/*  GO FULL WIDTH AT LESS THAN 480 PIXELS */
+
+@media only screen and (max-width: 480px) {
+  .span-8-of-8 {
+    width: 100%;
+  }
+
+  .span-7-of-8 {
+    width: 100%;
+  }
+
+  .span-6-of-8 {
+    width: 100%;
+  }
+
+  .span-5-of-8 {
+    width: 100%;
+  }
+
+  .span-4-of-8 {
+    width: 100%;
+  }
+
+  .span-3-of-8 {
+    width: 100%;
+  }
+
+  .span-2-of-8 {
+    width: 100%;
+  }
+
+  .span-1-of-8 {
+    width: 100%;
+  }
+}
+
+/*  GRID OF NINE   ============================================================================= */
+
+.span-9-of-9 {
+  width: 100%;
+}
+
+.span-8-of-9 {
+  width: 88.71%;
+}
+
+.span-7-of-9 {
+  width: 77.42%;
+}
+
+.span-6-of-9 {
+  width: 66.13%;
+}
+
+.span-5-of-9 {
+  width: 54.84%;
+}
+
+.span-4-of-9 {
+  width: 43.55%;
+}
+
+.span-3-of-9 {
+  width: 32.26%;
+}
+
+.span-2-of-9 {
+  width: 20.97%;
+}
+
+.span-1-of-9 {
+  width: 9.68%;
+}
+
+/*  GO FULL WIDTH AT LESS THAN 480 PIXELS */
+
+@media only screen and (max-width: 480px) {
+  .span-9-of-9 {
+    width: 100%;
+  }
+
+  .span-8-of-9 {
+    width: 100%;
+  }
+
+  .span-7-of-9 {
+    width: 100%;
+  }
+
+  .span-6-of-9 {
+    width: 100%;
+  }
+
+  .span-5-of-9 {
+    width: 100%;
+  }
+
+  .span-4-of-9 {
+    width: 100%;
+  }
+
+  .span-3-of-9 {
+    width: 100%;
+  }
+
+  .span-2-of-9 {
+    width: 100%;
+  }
+
+  .span-1-of-9 {
+    width: 100%;
+  }
+}
+
+/*  GRID OF TEN   ============================================================================= */
+
+.span-10-of-10 {
+  width: 100%;
+}
+
+.span-9-of-10 {
+  width: 89.84%;
+}
+
+.span-8-of-10 {
+  width: 79.68%;
+}
+
+.span-7-of-10 {
+  width: 69.52%;
+}
+
+.span-6-of-10 {
+  width: 59.36%;
+}
+
+.span-5-of-10 {
+  width: 49.2%;
+}
+
+.span-4-of-10 {
+  width: 39.04%;
+}
+
+.span-3-of-10 {
+  width: 28.88%;
+}
+
+.span-2-of-10 {
+  width: 18.72%;
+}
+
+.span-1-of-10 {
+  width: 8.56%;
+}
+
+/*  GO FULL WIDTH AT LESS THAN 480 PIXELS */
+
+@media only screen and (max-width: 480px) {
+  .span-10-of-10 {
+    width: 100%;
+  }
+
+  .span-9-of-10 {
+    width: 100%;
+  }
+
+  .span-8-of-10 {
+    width: 100%;
+  }
+
+  .span-7-of-10 {
+    width: 100%;
+  }
+
+  .span-6-of-10 {
+    width: 100%;
+  }
+
+  .span-5-of-10 {
+    width: 100%;
+  }
+
+  .span-4-of-10 {
+    width: 100%;
+  }
+
+  .span-3-of-10 {
+    width: 100%;
+  }
+
+  .span-2-of-10 {
+    width: 100%;
+  }
+
+  .span-1-of-10 {
+    width: 100%;
+  }
+}
+
+/*  GRID OF ELEVEN   ============================================================================= */
+
+.span-11-of-11 {
+  width: 100%;
+}
+
+.span-10-of-11 {
+  width: 90.76%;
+}
+
+.span-9-of-11 {
+  width: 81.52%;
+}
+
+.span-8-of-11 {
+  width: 72.29%;
+}
+
+.span-7-of-11 {
+  width: 63.05%;
+}
+
+.span-6-of-11 {
+  width: 53.81%;
+}
+
+.span-5-of-11 {
+  width: 44.58%;
+}
+
+.span-4-of-11 {
+  width: 35.34%;
+}
+
+.span-3-of-11 {
+  width: 26.1%;
+}
+
+.span-2-of-11 {
+  width: 16.87%;
+}
+
+.span-1-of-11 {
+  width: 7.63%;
+}
+
+/*  GO FULL WIDTH AT LESS THAN 480 PIXELS */
+
+@media only screen and (max-width: 480px) {
+  .span-11-of-11 {
+    width: 100%;
+  }
+
+  .span-10-of-11 {
+    width: 100%;
+  }
+
+  .span-9-of-11 {
+    width: 100%;
+  }
+
+  .span-8-of-11 {
+    width: 100%;
+  }
+
+  .span-7-of-11 {
+    width: 100%;
+  }
+
+  .span-6-of-11 {
+    width: 100%;
+  }
+
+  .span-5-of-11 {
+    width: 100%;
+  }
+
+  .span-4-of-11 {
+    width: 100%;
+  }
+
+  .span-3-of-11 {
+    width: 100%;
+  }
+
+  .span-2-of-11 {
+    width: 100%;
+  }
+
+  .span-1-of-11 {
+    width: 100%;
+  }
+}
+
+/*  GRID OF TWELVE   ============================================================================= */
+
+.span-12-of-12 {
+  width: 100%;
+}
+
+.span-11-of-12 {
+  width: 91.53%;
+}
+
+.span-10-of-12 {
+  width: 83.06%;
+}
+
+.span-9-of-12 {
+  width: 74.6%;
+}
+
+.span-8-of-12 {
+  width: 66.13%;
+}
+
+.span-7-of-12 {
+  width: 57.66%;
+}
+
+.span-6-of-12 {
+  width: 49.2%;
+}
+
+.span-5-of-12 {
+  width: 40.73%;
+}
+
+.span-4-of-12 {
+  width: 32.26%;
+}
+
+.span-3-of-12 {
+  width: 23.8%;
+}
+
+.span-2-of-12 {
+  width: 15.33%;
+}
+
+.span-1-of-12 {
+  width: 6.86%;
+}
+
+/*  GO FULL WIDTH AT LESS THAN 480 PIXELS */
+
+@media only screen and (max-width: 480px) {
+  .span-12-of-12 {
+    width: 100%;
+  }
+
+  .span-11-of-12 {
+    width: 100%;
+  }
+
+  .span-10-of-12 {
+    width: 100%;
+  }
+
+  .span-9-of-12 {
+    width: 100%;
+  }
+
+  .span-8-of-12 {
+    width: 100%;
+  }
+
+  .span-7-of-12 {
+    width: 100%;
+  }
+
+  .span-6-of-12 {
+    width: 100%;
+  }
+
+  .span-5-of-12 {
+    width: 100%;
+  }
+
+  .span-4-of-12 {
+    width: 100%;
+  }
+
+  .span-3-of-12 {
+    width: 100%;
+  }
+
+  .span-2-of-12 {
+    width: 100%;
+  }
+
+  .span-1-of-12 {
+    width: 100%;
+  }
+}
+.chuyenbay-content {
+  width: 960px;
+  margin: auto;
+}
