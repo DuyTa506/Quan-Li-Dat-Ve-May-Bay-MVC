@@ -58,9 +58,14 @@ namespace Final_APP.Controllers
         public ActionResult DeleteAccountConfirmed(string TenDangNhap)
         {
 
+
+            conn.TaiKhoans.SqlQuery("ALTER TABLE Taikhoan NOCHECK CONSTRAINT ALL;");
+            conn.TaiKhoans.SqlQuery("ALTER TABLE NGUOIDUNG NOCHECK CONSTRAINT ALL;");
             TaiKhoan taiKhoan = conn.TaiKhoans.Find(TenDangNhap);
             conn.TaiKhoans.Remove(taiKhoan);
             conn.SaveChanges();
+            conn.TaiKhoans.SqlQuery("ALTER TABLE TAIKHOAN CHECK CONSTRAINT ALL");
+            conn.TaiKhoans.SqlQuery("ALTER TABLE NGUOIDUNG NOCHECK CONSTRAINT ALL;");
             return RedirectToAction("UserAccount");
         }
 
@@ -111,7 +116,10 @@ namespace Final_APP.Controllers
         //Thong tin nguoi dung
         public ActionResult UserDetail()
         {
+
+
             List<NguoiDung> ketqua = conn.NguoiDungs.ToList();
+            List<TaiKhoan> account = conn.TaiKhoans.ToList();
             return View(ketqua);
         }
 
@@ -147,6 +155,10 @@ namespace Final_APP.Controllers
             return View(nguoiDung);
         }
 
+
+
         //---------------End quan li nguoi dung
     }
+
+
 }

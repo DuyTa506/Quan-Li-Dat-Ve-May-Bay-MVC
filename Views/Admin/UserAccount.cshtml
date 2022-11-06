@@ -1,0 +1,39 @@
+﻿@model List<Final_APP.Entities.TaiKhoan>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<h2 class="m-5">Danh sách tài khoản </h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Tên đăng nhập</th>
+            <th scope="col">Mật khẩu</th>
+
+        </tr>
+    </thead>
+    <tbody class=" = " py-2">
+        @foreach (var item in Model)
+        {
+            if (item.Quyen == false)
+            {
+                <tr>
+                    <td>@item.TenDangNhap</td>
+
+                    <td>@item.MatKhau</td>
+                    <td>
+                        <a href="~/Admin/DeleteAccount?TenDangNhap=@item.TenDangNhap" class="btn btn-outline-dark">
+                            Xóa
+                        </a>
+                    </td>
+                </tr>
+
+            }
+
+
+        }
+
+    </tbody>
+</table>
+

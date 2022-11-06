@@ -1,0 +1,42 @@
+﻿@model Final_APP.Entities.TaiKhoan
+@{
+    ViewBag.Title = "DeleteAccount";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Xóa tài khoản</h2>
+
+<h3>Bạn có thật sự muốn xóa tài khoản ?</h3>
+<div>
+    <h4>Tài khoản</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Tên đăng nhập
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TenDangNhap)
+        </dd>
+        <br>
+        <dt>
+            Mật khẩu
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MatKhau)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-outline-info" /> |
+            @Html.ActionLink("Trang chủ", "Index")
+
+        </div>
+    }
+</div>
+
+
