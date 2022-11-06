@@ -426,6 +426,8 @@
     <Content Include="Views\Admin\UserAccount.cshtml" />
     <Content Include="Views\Admin\EditUser.cshtml" />
     <Content Include="Views\Admin\DeleteAccount.cshtml" />
+    <Content Include="Views\Admin\IndexChangBay.cshtml" />
+    <Content Include="Views\Admin\EditChangBay.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,0 +1,46 @@
+﻿@model Final_APP.Entities.ChangBay
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Chỉnh sửa chặng bay</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.MaChangBay)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.SanBay_CatCanh, "Sân bay cất cánh", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("SanBay_CatCanh", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.SanBay_CatCanh, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.SanBay_HaCanh, "Sân bay hạ cánh", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("SanBay_HaCanh", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.SanBay_HaCanh, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Lưu" class="btn btn-outline-info" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    <a href="~/Admin/IndexChangBay" class="btn btn-outline-light tex col-md-offset-2 col-md-10 py-4">Quay lại  </a>
+</div>
+

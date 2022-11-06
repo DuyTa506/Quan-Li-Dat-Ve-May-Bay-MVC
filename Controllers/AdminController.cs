@@ -158,6 +158,54 @@ namespace Final_APP.Controllers
 
 
         //---------------End quan li nguoi dung
+
+
+
+        // Quan li chuyen bay start
+        // GET: ChangBays
+        public ActionResult IndexChangBay()
+        {
+            var changBays = conn.ChangBays.Include(c => c.SanBay).Include(c => c.SanBay1);
+
+            var sanbay = (from s in conn.SanBays select s).ToList();
+
+            ViewBag.SanBay = sanbay;
+
+            return View(changBays.ToList());
+        }
+
+        // GET: ChangBays/Edit/5
+        public ActionResult EditChangBay(string id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            ChangBay changBay = conn.ChangBays.Find(id);
+            if (changBay == null)
+            {
+                return HttpNotFound();
+            }
+            ViewBag.SanBay_CatCanh = new SelectList(conn.SanBays, "MaSanBay", "TenSanBay", changBay.SanBay_CatCanh);
+            ViewBag.SanBay_HaCanh = new SelectList(conn.SanBays, "MaSanBay", "TenSanBay", changBay.SanBay_HaCanh);
+            return View(changBay);
+        }
+
+        // POST: ChangBays/Edit/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult EditChangBay([Bind(Include = "MaChangBay,SanBay_CatCanh,SanBay_HaCanh")] ChangBay changBay)
+        {
+            if (ModelState.IsValid)
+            {
+                conn.Entry(changBay).State = EntityState.Modified;
+                conn.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            ViewBag.SanBay_CatCanh = new SelectList(conn.SanBays, "MaSanBay", "TenSanBay", changBay.SanBay_CatCanh);
+            ViewBag.SanBay_HaCanh = new SelectList(conn.SanBays, "MaSanBay", "TenSanBay", changBay.SanBay_HaCanh);
+            return View(changBay);
+        }
     }
 
 

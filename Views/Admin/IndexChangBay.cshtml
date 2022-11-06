@@ -1,0 +1,67 @@
+﻿@model IEnumerable<Final_APP.Entities.ChangBay>
+
+@{
+    ViewBag.Title = "IndexChangBay";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Chặng bay</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Mã chặng bay</th>
+            <th scope="col">Sân bay cất cánh</th>
+            <th scope="col">Sân bay hạ cánh</th>
+
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>@item.MaChangBay</td>
+            <td>@item.SanBay_CatCanh</td>
+            <td>@item.SanBay_HaCanh</td>
+
+            <td>
+
+                <a href="~/Admin/EditChangBay?id=@item.MaChangBay" class=" btn btn-outline-dark">
+                    Sửa
+                </a>
+            </td>
+            
+        </tr>
+
+        }
+
+</tbody>
+</table>
+
+
+    <table class="table-primary">
+        <thead>
+            <tr>
+                <th scope="col">Mã</th>
+                <th scope="col" class="px-3">Tên</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var i in ViewBag.SanBay)
+            {
+                <tr >
+                    <td>@i.MaSanBay</td>
+                    <td class="px-3">@i.TenSanBay</td>
+
+
+
+                </tr>
+
+            }
+
+        </tbody>
+    </table>
+
+
