@@ -362,7 +362,6 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\UserController.cs" />
-    <Compile Include="DAO\TaiKhoan_Dao.cs" />
     <Compile Include="Entities\ChangBay.cs" />
     <Compile Include="Entities\ChuyenBay.cs" />
     <Compile Include="Entities\DVMB.cs" />

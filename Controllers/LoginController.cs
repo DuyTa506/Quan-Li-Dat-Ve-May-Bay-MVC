@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Final_APP.Entities;
-using Final_APP.DAO;
+
 namespace Final_APP.Controllers
 {
     public class LoginController : Controller
@@ -46,6 +46,7 @@ namespace Final_APP.Controllers
                         if (data.MatKhau == account.MatKhau)
                         {
                             Session["User"] = data.TenDangNhap.ToString();
+                            TempData["User"] = data.TenDangNhap.ToString();
                            
                             return RedirectToAction("Index", "User");
                         }

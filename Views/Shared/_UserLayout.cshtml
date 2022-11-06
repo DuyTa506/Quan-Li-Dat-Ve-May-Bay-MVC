@@ -6,6 +6,10 @@
     <title>@ViewBag.Title</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
+    <meta name="description" content="" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="~/assets/anh/logo2.jpg" />
 
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
@@ -48,25 +52,40 @@
                     </div>
                 </div>
                 <div class="col-lg-6 text-center text-lg-right">
-                    <div class="d-inline-flex align-items-center">
-                        <a class="text-primary px-3" href="https://www.facebook.com/Banana-Airlines-109535575252958">
-                            <i class="fab fa-facebook-f"></i>
+
+                    @if (TempData["User"] != null)
+                    {
+                        <h5 class="card-title text-primary">Xin chào , @TempData["User"].ToString() </h5>
+
+                        <a href="~/Login/Login" class="btn btn-primary mt-2 ">
+                            Đăng xuất
                         </a>
-                        <a class="text-primary px-3" href="">
-                            <i class="fab fa-twitter"></i>
+                    }
+
+
+                    else
+                    { <div class="d-inline-flex align-items-center">
+                            <a class="text-primary px-3" href="https://www.facebook.com/Banana-Airlines-109535575252958">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a class="text-primary px-3" href="">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a class="text-primary px-3" href="">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a class="text-primary px-3" href="">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a class="text-primary px-3" href="">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </div>
+                        <a href="~/Login/Login" class="btn btn-primary mt-2 ">
+                            Đăng nhập / Đăng ký
                         </a>
-                        <a class="text-primary px-3" href="">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a class="text-primary px-3" href="">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a class="text-primary px-3" href="">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                    </div>
-                    <a href="./login.html" class="btn btn-primary mt-2 ">Đăng nhập / Đăng ký</a>
-                    </a>
+                    }
+
                 </div>
 
             </div>
