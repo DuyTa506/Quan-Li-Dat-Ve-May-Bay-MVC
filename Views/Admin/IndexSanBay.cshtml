@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Final_APP.Entities.SanBay>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Danh sách sân bay</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            Mã sân bay
+        </th>
+        <th>
+            Tên sân bay
+        </th>
+        <th>
+            Vị trí
+        </th>
+        <th>
+            Khu vực
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaSanBay)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenSanBay)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ViTri)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KhuVuc)
+            </td>
+            <td>
+                <a href="~/Admin/DeleteSanBay?id=@item.MaSanBay" class=" btn btn-outline-dark">
+                    Xóa
+                </a>
+                <a href="~/Admin/EditSanBay?id=@item.MaSanBay" class=" btn btn-outline-dark">
+                    Sửa
+                </a>
+            </td>
+        </tr>
+    }
+
+</table>

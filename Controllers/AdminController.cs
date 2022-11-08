@@ -341,6 +341,34 @@ namespace Final_APP.Controllers
         }
 
         //---------------------End Chuyen Bay
+
+        public ActionResult IndexSanBay()
+        {
+            return View(conn.SanBays.ToList());
+        }
+
+        // GET: SanBays/Create
+        public ActionResult CreateSanBay()
+        {
+            return View();
+        }
+
+        // POST: SanBays/Create
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CreateSanBay([Bind(Include = "MaSanBay,TenSanBay,ViTri,KhuVuc")] SanBay sanBay)
+        {
+            if (ModelState.IsValid)
+            {
+                conn.SanBays.Add(sanBay);
+                conn.SaveChanges();
+                return RedirectToAction("IndexSanBay");
+            }
+
+            return View(sanBay);
+        }
     }
 
 
