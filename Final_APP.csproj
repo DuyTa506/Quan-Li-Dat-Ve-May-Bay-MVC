@@ -301,6 +301,7 @@
     <Content Include="assets\img\layouts\layout-fluid-light.png" />
     <Content Include="assets\img\layouts\layout-without-menu-light.png" />
     <Content Include="assets\img\layouts\layout-without-navbar-light.png" />
+    <Content Include="assets\js\JavaScript.js" />
     <Content Include="assets\js\config.js" />
     <Content Include="assets\js\dashboards-analytics.js" />
     <Content Include="assets\js\extended-ui-perfect-scrollbar.js" />
@@ -428,6 +429,11 @@
     <Content Include="Views\Admin\DeleteAccount.cshtml" />
     <Content Include="Views\Admin\IndexChangBay.cshtml" />
     <Content Include="Views\Admin\EditChangBay.cshtml" />
+    <Content Include="Views\Admin\CreateChangBay.cshtml" />
+    <Content Include="Views\Admin\IndexChuyenBay.cshtml" />
+    <Content Include="Views\Admin\CreateChuyenBay.cshtml" />
+    <Content Include="Views\Admin\DetailChuyenBay.cshtml" />
+    <Content Include="Views\Admin\EditChuyenBay.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

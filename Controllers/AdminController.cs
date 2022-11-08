@@ -206,7 +206,144 @@ namespace Final_APP.Controllers
             ViewBag.SanBay_HaCanh = new SelectList(conn.SanBays, "MaSanBay", "TenSanBay", changBay.SanBay_HaCanh);
             return View(changBay);
         }
+        // GET: ChangBays/Create
+
+
+        public ActionResult CreateChangBay()
+        {
+            ViewBag.SanBay_CatCanh = new SelectList(conn.SanBays, "MaSanBay", "TenSanBay");
+            ViewBag.SanBay_HaCanh = new SelectList(conn.SanBays, "MaSanBay", "TenSanBay");
+            return View();
+        }
+
+        // POST: ChangBays/Create
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CreateChangBay([Bind(Include = "MaChangBay,SanBay_CatCanh,SanBay_HaCanh")] ChangBay changBay)
+        {
+            if (ModelState.IsValid)
+            {
+                conn.ChangBays.Add(changBay);
+                conn.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            ViewBag.SanBay_CatCanh = new SelectList(conn.SanBays, "MaSanBay", "TenSanBay", changBay.SanBay_CatCanh);
+            ViewBag.SanBay_HaCanh = new SelectList(conn.SanBays, "MaSanBay", "TenSanBay", changBay.SanBay_HaCanh);
+            return View(changBay);
+        }
+        //Chuyen bay ------------
+        // GET: ChuyenBays
+        public ActionResult IndexChuyenBay()
+        {
+            var chuyenBays = conn.ChuyenBays.Include(c => c.ChangBay).Include(c => c.MayBay);
+            return View(chuyenBays.ToList());
+        }
+
+        // GET: ChuyenBays/ChiTiet
+        public ActionResult DetailChuyenBay(string id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            ChuyenBay chuyenBay = conn.ChuyenBays.Find(id);
+            if (chuyenBay == null)
+            {
+                return HttpNotFound();
+            }
+            return View(chuyenBay);
+        }
+
+        // GET: ChuyenBays/Edit/5
+        public ActionResult EditChuyenBay(string id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            ChuyenBay chuyenBay = conn.ChuyenBays.Find(id);
+            if (chuyenBay == null)
+            {
+                return HttpNotFound();
+            }
+            ViewBag.MaChangBay = new SelectList(conn.ChangBays, "MaChangBay", "SanBay_CatCanh", chuyenBay.MaChangBay);
+            ViewBag.LoaiMayBay = new SelectList(conn.MayBays, "LoaiMayBay", "TenMayBay", chuyenBay.LoaiMayBay);
+            return View(chuyenBay);
+        }
+
+        // POST: ChuyenBays/Edit/5
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult EditChuyenBay([Bind(Include = "MaChuyenBay,TGbay,NgayBay,GioBay,LoaiMayBay,Gia,SaleTreEm,SaleEmBe,MaChangBay")] ChuyenBay chuyenBay)
+        {
+            if (ModelState.IsValid)
+            {
+                conn.Entry(chuyenBay).State = EntityState.Modified;
+                conn.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            ViewBag.MaChangBay = new SelectList(conn.ChangBays, "MaChangBay", "SanBay_CatCanh", chuyenBay.MaChangBay);
+            ViewBag.LoaiMayBay = new SelectList(conn.MayBays, "LoaiMayBay", "TenMayBay", chuyenBay.LoaiMayBay);
+            return View(chuyenBay);
+        }
+
+        // GET: ChuyenBays/Create
+        public ActionResult CreateChuyenBay()
+        {
+            ViewBag.MaChangBay = new SelectList(conn.ChangBays, "MaChangBay", "SanBay_CatCanh");
+            ViewBag.LoaiMayBay = new SelectList(conn.MayBays, "LoaiMayBay", "TenMayBay");
+            return View();
+        }
+
+        // POST: ChuyenBays/Create
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CreateChuyenBay([Bind(Include = "MaChuyenBay,TGbay,NgayBay,GioBay,LoaiMayBay,Gia,SaleTreEm,SaleEmBe,MaChangBay")] ChuyenBay chuyenBay)
+        {
+            if (ModelState.IsValid)
+            {
+                conn.ChuyenBays.Add(chuyenBay);
+                conn.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            ViewBag.MaChangBay = new SelectList(conn.ChangBays, "MaChangBay", "SanBay_CatCanh", chuyenBay.MaChangBay);
+            ViewBag.LoaiMayBay = new SelectList(conn.MayBays, "LoaiMayBay", "TenMayBay", chuyenBay.LoaiMayBay);
+            return View(chuyenBay);
+        }
+
+
+        // POST: ChuyenBays/Delete/5
+        [HttpPost]
+
+        public ActionResult DeleteChuyenBay(string id)
+        {
+            try
+            {
+                using (var conn = new DVMB())
+                {
+                    var obj = conn.ChuyenBays.Find(id);
+                    conn.ChuyenBays.Remove(obj);
+                    conn.SaveChanges();
+                    return Json(new { message = "Success!" }, JsonRequestBehavior.AllowGet);
+                }
+            }
+            catch (Exception e)
+            {
+                return Json(new { message = "Fail!" }, JsonRequestBehavior.AllowGet);
+            }
+        }
+
+        //---------------------End Chuyen Bay
     }
+
+
 
 
 }

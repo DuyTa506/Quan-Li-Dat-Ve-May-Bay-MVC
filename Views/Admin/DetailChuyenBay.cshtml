@@ -1,0 +1,100 @@
+﻿@model Final_APP.Entities.ChuyenBay
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Chi tiết chuyến bay</h2>
+
+<div>
+    <h4></h4>
+    <hr />
+    <dl class=" table table-responsive-lg ">
+        <dt class="header">
+            Mã chuyến bay
+        </dt>
+
+        <dd>
+            @Model.MaChuyenBay
+        </dd>
+
+        <dt>
+            Thời gian bay
+        </dt>
+
+        <dd>
+            @Model.TGbay
+        </dd>
+
+        <dt>
+            Ngày bay
+        </dt>
+
+        <dd>
+
+            @Model.NgayBay
+        </dd>
+
+        <dt>
+            Giờ bay
+        </dt>
+
+        <dd>
+            @Model.GioBay
+        </dd>
+
+        <dt>
+            Giá
+        </dt>
+
+        <dd>
+            @Model.Gia
+        </dd>
+
+        <dt>
+            Gía vé trẻ em
+        </dt>
+
+        <dd>
+            @(((double)Model.Gia * Model.SaleTreEm))
+        </dd>
+
+        <dt>
+            Giá vé em bé
+        </dt>
+
+        <dd>
+            @(((double)Model.Gia * Model.SaleEmBe))
+        </dd>
+
+        <dt>
+            Sân bay cất cánh
+        </dt>
+
+        <dd>
+            @foreach (var item in Model.ChangBay.SanBay_CatCanh)
+            {
+                @item
+            }
+        </dd>
+        <dt>
+            Sân bay hạ cánh
+        </dt>
+        <dd>
+            @foreach (var item in Model.ChangBay.SanBay_HaCanh)
+            {
+                @item
+            }
+        </dd>
+
+    </dl>
+</div>
+<p>
+    <a href="~/Admin/EditChuyenBay?id=@Model.MaChuyenBay" class="btn btn-outline-dark">
+        Sửa
+    </a>
+    <div>
+        <a href="~/Admin/IndexChuyenBay" class="btn btn-outline-ligh  col-md-offset-2 col-md-10 py-4">Quay lại </a>
+    </div>
+</p>
