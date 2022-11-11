@@ -1,8 +1,138 @@
-﻿
+﻿@model IEnumerable<Final_APP.Entities.KhuyenMai>
+
 @{
     ViewBag.Title = "IndexKhuyenMai";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>IndexKhuyenMai</h2>
+<h2>Danh sách hóa đơn</h2>
 
+<a href="~/Admin/CreateKhuyenMai" class=" btn btn-outline-dark" style=" float:right; margin-right: 20px">
+    Thêm khuyến mãi
+</a>
+<table class="table">
+    <tr>
+        <th></th>
+        <th>
+            Mã khuyến mãi
+        </th>
+        <th>
+            Tên khuyến mãi
+        </th>
+        <th>
+            Phần trăm khuyến mãi
+        </th>
+        <th>
+            Thời gian bắt đầu
+        </th>
+        <th>
+            Thời gian kết thúc
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaKhuyenMai)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenKhuyenMai)
+            </td>
+            <td>
+                @(((double)item.PhanTramSale * 100)) %
+            </td>
+            <td>
+                @item.ThoiGianBD
+            </td>
+            <td>
+                @item.ThoiGianKT
+            </td>
+            <td>
+                <button type="button" class="btn btn-outline-danger" title="Delete" id="@item.MaKhuyenMai" onclick="Delete('@item.MaKhuyenMai')">Xóa</button>
+            </td>
+        </tr>
+    }
+
+</table>
+
+
+
+<div class="overlay toggle-menu"></div>
+
+
+<script src="~/assets/js/JavaScript.js"></script>
+<script>
+    var tables = document.getElementsByTagName('table');
+    var table = tables[tables.length - 1];
+    var rows = table.rows;
+    for (var i = 1, td; i < rows.length; i++) {
+        td = document.createElement('td');
+        td.appendChild(document.createTextNode(i));
+        rows[i].insertBefore(td, rows[i].firstChild);
+    }
+
+
+
+    var deleteLinks = document.querySelectorAll('.delete');
+
+    for (var i = 0; i < deleteLinks.length; i++) {
+        deleteLinks[i].addEventListener('click', function (event) {
+            event.preventDefault();
+
+            var choice = confirm(this.getAttribute('data-confirm'));
+
+            if (choice) {
+                window.location.href = this.getAttribute('href');
+            }
+        });
+    }
+
+    function Delete(ID) {
+        Swal.fire({
+            title: 'Bạn có chắc chắn muốn xóa ?',
+            text: "Khi xóa bản ghi này sẽ không thể hoàn tác!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Xóa!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $.ajax({
+                    url: "/Admin/DeleteKhuyenMai",
+                    type: "POST",
+                    data: { id: ID },
+                    success: function (response) {
+                        console.log(response);
+                        if (response.message == "Success!") {
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'SUCCESSFUL',
+                                timer: 2000,
+                                text: 'Delete successfully!',
+                            })
+                            setTimeout(window.location.reload(), 10000);
+                        } else {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'OOPS',
+                                text: 'Something went wrong!'
+                            })
+                        }
+                    },
+                    error: function (err) {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'OOPS',
+                            text: err
+                        })
+                    }
+                });
+            }
+        })
+    }
+
+</script>

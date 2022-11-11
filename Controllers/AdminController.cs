@@ -514,6 +514,48 @@ namespace Final_APP.Controllers
             return View(conn.KhuyenMais.ToList());
         }
 
+        // GET: KhuyenMais/Create
+        public ActionResult CreateKhuyenMai()
+        {
+            return View();
+        }
+
+        // POST: KhuyenMai/Create
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CreateKhuyenMai([Bind(Include = "MaKhuyenMai,TenKhuyenMai,PhanTramSale,ThoiGianBD,ThoiGianKT")] KhuyenMai khuyenMai)
+        {
+            if (ModelState.IsValid)
+            {
+                conn.KhuyenMais.Add(khuyenMai);
+                conn.SaveChanges();
+                return RedirectToAction("IndexKhuyenMai");
+            }
+
+            return View(khuyenMai);
+        }
+
+        [HttpPost]
+
+        public ActionResult DeleteKhuyenMai(string id)
+        {
+            try
+            {
+                using (var conn = new DVMB())
+                {
+                    var obj = conn.KhuyenMais.Find(id);
+                    conn.KhuyenMais.Remove(obj);
+                    conn.SaveChanges();
+                    return Json(new { message = "Success!" }, JsonRequestBehavior.AllowGet);
+                }
+            }
+            catch (Exception e)
+            {
+                return Json(new { message = "Fail!" }, JsonRequestBehavior.AllowGet);
+            }
+        }
+
     }    
  }
 

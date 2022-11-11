@@ -444,6 +444,7 @@
     <Content Include="Views\Admin\IndexKhuyenMai.cshtml" />
     <Content Include="Views\Admin\EditNganHang.cshtml" />
     <Content Include="Views\Admin\LichSuDatVe.cshtml" />
+    <Content Include="Views\Admin\CreateKhuyenMai.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
