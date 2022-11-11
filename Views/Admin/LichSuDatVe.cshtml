@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Final_APP.Entities.LichSuDatVe>
+@{
+    ViewBag.Title = "LichSuDatVe";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Lịch sử đặt vé</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Mã người dùng</th>
+            <th scope="col">Họ và tên</th>
+            <th scope="col">Ngày đặt</th>
+            <th scope="col">Thành tiền</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>@item.MaNguoiDung</td>
+            <td>@item.HoTen</td>
+            <td>@item.NgayDat</td>
+            <td>@item.ThanhTien</td>
+
+           
+
+        </tr>
+
+        }
+
+    </tbody>
+</table>
+
+
+
+
+

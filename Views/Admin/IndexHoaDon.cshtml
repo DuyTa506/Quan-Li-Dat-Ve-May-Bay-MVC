@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Final_APP.Entities.HoaDon>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Danh sách hóa đơn</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            Mã hóa đơn
+        </th>
+        <th>
+            Ngày xuất đơn
+        </th>
+        <th>
+            Thành tiền
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaHoaDon)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NgayXuatDon)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ThanhTien)
+            </td>
+            <td>
+                <a href="~/Admin/DetailHoaDon?id=@item.MaHoaDon" class="btn btn-outline-dark">
+                    Chi tiết
+                </a>
+            </td>
+        </tr>
+    }
+
+</table>

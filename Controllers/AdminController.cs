@@ -159,7 +159,30 @@ namespace Final_APP.Controllers
 
         //---------------End quan li nguoi dung
 
+        //-----------------Lich su dat ve
 
+        public ActionResult LichSuDatVe()
+        {
+            List<LichSuDatVe> lichSuDatVe = new List<LichSuDatVe>();
+            List<NguoiDung> nguoidung = conn.NguoiDungs.ToList();
+            List<PhieuDatVe> phieudatve = conn.PhieuDatVes.ToList();
+            List<HoaDon> hoadon = conn.HoaDons.ToList();
+            var LichSuDatVe =  (from n in nguoidung
+                         join p in phieudatve on n.MaNguoiDung equals p.MaNguoiDung
+                         join h in hoadon on p.MaPhieuDatVe equals h.MaPhieuDatVe
+                         select new LichSuDatVe
+                         {
+                             MaNguoiDung = n.MaNguoiDung,
+                             HoTen = n.HoTen,
+                             NgayDat = p.NgayDat,
+                             ThanhTien = h.ThanhTien,
+                            
+                         }).OrderBy(x => x.NgayDat);
+            lichSuDatVe = LichSuDatVe.ToList();
+            return View(lichSuDatVe);
+        }
+
+        //-----------------Lich su dat ve end
 
         // Quan li chuyen bay start
         // GET: ChangBays
@@ -369,9 +392,130 @@ namespace Final_APP.Controllers
 
             return View(sanBay);
         }
-    }
+
+        // index
+        public ActionResult IndexHoaDon()
+        {
+            var hoaDons = conn.HoaDons.Include(h => h.HinhThucThanhToan).Include(h => h.KhuyenMai).Include(h => h.PhieuDatVe);
+            return View(hoaDons.ToList());
+        }
+
+        // Chi tiet hoa don
+
+        // GET: HoaDons/Details/5
+        public ActionResult DetailHoaDon(string id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            HoaDon hoaDon = conn.HoaDons.Find(id);
+            if (hoaDon == null)
+            {
+                return HttpNotFound();
+            }
+            return View(hoaDon);
+        }
+
+        //-----------Hoa Don end
+        //--------------Ngan hANG
+
+        //index
+        public ActionResult IndexNganHang()
+        {
+            var nganHangs = conn.NganHangs.Include(n => n.HinhThucThanhToan);
+            return View(nganHangs.ToList());
+        }
+
+        // GET: NganHangs/Edit/5
+        public ActionResult EditNganHang(string id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            NganHang nganHang = conn.NganHangs.Find(id);
+            if (nganHang == null)
+            {
+                return HttpNotFound();
+            }
+            ViewBag.MaHinhThucTT = new SelectList(conn.HinhThucThanhToans, "MaHinhThucTT", "TenHinhThucTT", nganHang.MaHinhThucTT);
+            return View(nganHang);
+        }
+
+        // POST: NganHangs/Edit/5
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult EditNganHang([Bind(Include = "MaNganHang,TenNganHang,MaHinhThucTT")] NganHang nganHang)
+        {
+            if (ModelState.IsValid)
+            {
+                conn.Entry(nganHang).State = EntityState.Modified;
+                conn.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            ViewBag.MaHinhThucTT = new SelectList(conn.HinhThucThanhToans, "MaHinhThucTT", "TenHinhThucTT", nganHang.MaHinhThucTT);
+            return View(nganHang);
+        }
+
+        // GET: NganHangs/Create
+        public ActionResult CreateNganHang()
+        {
+            ViewBag.MaHinhThucTT = new SelectList(conn.HinhThucThanhToans, "MaHinhThucTT", "TenHinhThucTT");
+            return View();
+        }
+
+        // POST: NganHangs/Create
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CreateNganHang([Bind(Include = "MaNganHang,TenNganHang,MaHinhThucTT")] NganHang nganHang)
+        {
+            if (ModelState.IsValid)
+            {
+                conn.NganHangs.Add(nganHang);
+                conn.SaveChanges();
+                return RedirectToAction("IndexNganHang");
+            }
+
+            ViewBag.MaHinhThucTT = new SelectList(conn.HinhThucThanhToans, "MaHinhThucTT", "TenHinhThucTT", nganHang.MaHinhThucTT);
+            return View(nganHang);
+        }
+
+
+        //Delete Ngan Hang ----------------
+        // POST: NganHang/Delete
+        [HttpPost]
+
+        public ActionResult DeleteNganHang(string id)
+        {
+            try
+            {
+                using (var conn = new DVMB())
+                {
+                    var obj = conn.NganHangs.Find(id);
+                    conn.NganHangs.Remove(obj);
+                    conn.SaveChanges();
+                    return Json(new { message = "Success!" }, JsonRequestBehavior.AllowGet);
+                }
+            }
+            catch (Exception e)
+            {
+                return Json(new { message = "Fail!" }, JsonRequestBehavior.AllowGet);
+            }
+        }
+        //Khuyen mai ------------------------------------------
+
+        public ActionResult IndexKhuyenMai()
+        {
+            return View(conn.KhuyenMais.ToList());
+        }
+
+    }    
+ }
 
 
 
-
-}

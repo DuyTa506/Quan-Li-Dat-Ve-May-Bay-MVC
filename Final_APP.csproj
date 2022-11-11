@@ -370,6 +370,7 @@
     <Compile Include="Entities\HinhThucThanhToan.cs" />
     <Compile Include="Entities\HoaDon.cs" />
     <Compile Include="Entities\KhuyenMai.cs" />
+    <Compile Include="Entities\LichSuDatVe.cs" />
     <Compile Include="Entities\MayBay.cs" />
     <Compile Include="Entities\NganHang.cs" />
     <Compile Include="Entities\NguoiDung.cs" />
@@ -436,6 +437,13 @@
     <Content Include="Views\Admin\EditChuyenBay.cshtml" />
     <Content Include="Views\Admin\IndexSanBay.cshtml" />
     <Content Include="Views\Admin\CreateSanBay.cshtml" />
+    <Content Include="Views\Admin\IndexNganHang.cshtml" />
+    <Content Include="Views\Admin\CreateNganHang.cshtml" />
+    <Content Include="Views\Admin\IndexHoaDon.cshtml" />
+    <Content Include="Views\Admin\DetailHoaDon.cshtml" />
+    <Content Include="Views\Admin\IndexKhuyenMai.cshtml" />
+    <Content Include="Views\Admin\EditNganHang.cshtml" />
+    <Content Include="Views\Admin\LichSuDatVe.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

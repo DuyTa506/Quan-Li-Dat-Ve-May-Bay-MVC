@@ -1,0 +1,67 @@
+﻿@model Final_APP.Entities.HoaDon
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>HoaDon</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Mã hóa đơn
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaHoaDon)
+        </dd>
+
+        <dt>
+            Ngày xuất đơn
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayXuatDon)
+        </dd>
+
+        <dt>
+            Thành tiền
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ThanhTien)
+        </dd>
+
+        <dt>
+            Hình thức thanh toán
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HinhThucThanhToan.MaHinhThucTT)
+        </dd>
+
+        <dt>
+            Mã khuyến mãi
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KhuyenMai.MaKhuyenMai)
+        </dd>
+        <dt>
+            Mã phiếu đặt vé
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhieuDatVe.MaPhieuDatVe)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    <div>
+        <a href="~/Admin/IndexHoaDon" class="btn btn-outline-ligh  col-md-offset-2 col-md-10 py-4">Quay lại </a>
+    </div>
+</p>

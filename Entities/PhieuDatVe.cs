@@ -20,7 +20,7 @@ namespace Final_APP.Entities
         [StringLength(10)]
         public string MaPhieuDatVe { get; set; }
 
-        [StringLength(10)]
+        [StringLength(50)]
         public string MaNguoiDung { get; set; }
 
         [Column(TypeName = "date")]
