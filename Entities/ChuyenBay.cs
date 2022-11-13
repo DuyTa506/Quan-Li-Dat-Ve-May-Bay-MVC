@@ -21,7 +21,8 @@ namespace Final_APP.Entities
 
         public TimeSpan? TGbay { get; set; }
 
-        [Column(TypeName = "date")]
+         [Column(TypeName = "date")]
+        //[DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd-MM-yy}")]
         public DateTime? NgayBay { get; set; }
 
         public TimeSpan? GioBay { get; set; }

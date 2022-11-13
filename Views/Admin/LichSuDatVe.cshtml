@@ -13,26 +13,73 @@
             <th scope="col">Họ và tên</th>
             <th scope="col">Ngày đặt</th>
             <th scope="col">Thành tiền</th>
-
         </tr>
     </thead>
     <tbody>
         @foreach (var item in Model)
         {
-        <tr>
-            <td>@item.MaNguoiDung</td>
-            <td>@item.HoTen</td>
-            <td>@item.NgayDat</td>
-            <td>@item.ThanhTien</td>
-
-           
-
-        </tr>
-
+            <tr>
+                <td>@item.MaNguoiDung</td>
+                <td>@item.HoTen</td>
+                <td>@item.NgayDat.ToString().Split(' ')[0]</td>
+                <td>@item.ThanhTien</td>
+            </tr>
         }
-
     </tbody>
 </table>
+
+<form action="~/Admin/LichSuDatVe" method="post">
+    <div class="form-horizontal ">
+        <hr>
+        <div class="form-group">
+            <label class="control-label col-md-2 " for="MaNguoiDung">Mã người dùng</label>
+            <div class="col-md-10 py-2">
+                <input class="form-control text-box single-line" id="MaNguoiDung" type="text" name="mand" value="@ViewBag.mand">
+                
+                
+                <span class="field-validation-valid text-danger" data-valmsg-for="MaNguoiDung" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="hovaten">Họ và tên</label>
+            <div class="col-md-10 py-2">
+                <input class="form-control text-box single-line" id="HoTen" type="text" name="hoten" value="@ViewBag.hoten">
+                <span class="field-validation-valid text-danger" data-valmsg-for="HoTen" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2" for="SDT">Ngày bay</label>
+            <div class="col-md-10 py-2">
+                <input class="form-control text-box single-line"  id="SDT" type="text" name="thoigian" value="@ViewBag.thoigian">
+                <span class="field-validation-valid text-danger" data-valmsg-for="SDT" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2 " for="Email">Giá</label>
+            <div class="col-md-10">
+                <input class="form-control text-box single-line" id="Email" type="text" name="gia" value="@ViewBag.gia">
+                <span class="field-validation-valid text-danger" data-valmsg-for="Email" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10 py-4">
+                <input type="submit" value="Tìm kiếm" class="btn btn-outline-info">
+            </div>
+        </div>
+    </div>
+
+@*    <div class="form-select">
+            <input type="text" class="form-control border-0 shadow-none" placeholder="tim theo ma nguoi dung" name="mand" value=@ViewBag.mand>
+            <input type="text" class="form-control border-0 shadow-none" placeholder="Tim theo ho ten" name="hoten" value=@ViewBag.hoten>
+            <input type="text" class="form-control border-0 shadow-none" placeholder="Tim theo thoi gian" name="thoigian" value=@ViewBag.thoigian>
+            <input type="text" class="form-control border-0 shadow-none" placeholder="Tim theo gia" name="gia" value=@ViewBag.gia>
+            <input type="submit" name="name" value="search" />
+        </div>*@
+</form>
+
 
 
 

@@ -116,13 +116,33 @@ namespace Final_APP.Controllers
         //Thong tin nguoi dung
         public ActionResult UserDetail()
         {
-
-
             List<NguoiDung> ketqua = conn.NguoiDungs.ToList();
             List<TaiKhoan> account = conn.TaiKhoans.ToList();
             return View(ketqua);
         }
+        [HttpPost]
+        public ActionResult UserDetail(string mand, string hoten, string sdt, string email)
+        {
+            ViewBag.mand = mand;
+            ViewBag.hoten = hoten;
+            ViewBag.sdt = sdt;
+            ViewBag.email = email;
+            List<NguoiDung> nd = conn.NguoiDungs.ToList();
+            var NguoiDung = (from n in nd
+                             where (n.MaNguoiDung.Contains(mand))
+                             where (n.HoTen.Contains(hoten))
+                             where (n.SDT.Contains(sdt))
+                             where (n.Email.Contains(email))
+                             select new NguoiDung
+                             {
+                                 MaNguoiDung = n.MaNguoiDung,
+                                 HoTen = n.HoTen,
+                                 SDT = n.SDT,
+                                 Email = n.Email,
+                             }).OrderBy(x => x.MaNguoiDung).ToList();
+            return View(NguoiDung);
 
+        }
         //Sua thong tin nguoi dung
         // GET: NguoiDungs/Edit
         public ActionResult EditUser(string id)
@@ -179,6 +199,47 @@ namespace Final_APP.Controllers
                             
                          }).OrderBy(x => x.NgayDat);
             lichSuDatVe = LichSuDatVe.ToList();
+            return View(lichSuDatVe);
+        }
+       [HttpPost]
+        public ActionResult LichSuDatVe(string mand, string hoten, string thoigian, string gia)
+        {
+            ViewBag.mand = mand;
+            ViewBag.hoten = hoten;
+            ViewBag.thoigian = thoigian;
+            ViewBag.gia = gia;
+            if (thoigian == "12:00:00 AM")
+            {
+                thoigian = "no";
+            }
+            else
+            {
+                thoigian = thoigian.Replace("12:00:00 AM", "");
+            }
+            
+            List<LichSuDatVe> lichSuDatVe = new List<LichSuDatVe>();
+            List<NguoiDung> nguoidung = conn.NguoiDungs.ToList();
+            List<PhieuDatVe> phieudatve = conn.PhieuDatVes.ToList();
+            List<HoaDon> hoadon = conn.HoaDons.ToList();
+            var LichSuDatVe = (from n in nguoidung
+                              // where (n.MaNguoiDung.Contains(mand))
+                               join p in phieudatve on n.MaNguoiDung equals p.MaNguoiDung
+                               join h in hoadon on p.MaPhieuDatVe equals h.MaPhieuDatVe
+                               where (n.MaNguoiDung.Contains(mand))
+                               where (n.HoTen.Contains(hoten))
+                               where (p.NgayDat.ToString().Contains(thoigian))
+                               where (h.ThanhTien.ToString().Contains(gia))
+                               select new LichSuDatVe
+                               {
+                                   MaNguoiDung = n.MaNguoiDung,
+                                   HoTen = n.HoTen,
+                                   NgayDat = p.NgayDat,
+                                   ThanhTien = h.ThanhTien,
+
+                               }).OrderBy(x => x.NgayDat);
+            lichSuDatVe = LichSuDatVe.ToList();
+            
+           // ViewBag.
             return View(lichSuDatVe);
         }
 

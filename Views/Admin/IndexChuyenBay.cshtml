@@ -5,6 +5,7 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
+
 <h2>Chuyến bay</h2>
 
 <table class="table">
@@ -24,7 +25,7 @@
         {
             <tr>
                 <td>@item.MaChuyenBay</td>
-                <td>@item.NgayBay</td>
+                <td>@item.NgayBay.ToString().Split(' ')[0]</td>
                 <td>@item.GioBay</td>
                 <td>@item.Gia</td>
 
